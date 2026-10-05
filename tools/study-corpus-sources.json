@@ -1,0 +1,3897 @@
+{
+  "generatedFrom": "Sefaria text export",
+  "cacheManifest": {
+    "generatedAt": "2026-10-05",
+    "sourceExport": "Sefaria Export (historical JSON dump mirrored at https://github.com/LiamSkop/hebrew_text_sefaria)",
+    "sourceExportCommit": "343a44e5dd83ffdf4dbc1df55233e27f28e3bdd2",
+    "rambamVersion": "Sefaria merged Hebrew text; Prayer and the Priestly Blessing uses the direct Wikisource Mishneh Torah version to exclude an unlicensed partial source.",
+    "gemaraVersion": "Wikisource Talmud Bavli",
+    "items": [
+      {
+        "mode": "gemara",
+        "name": "Arakhin",
+        "title": "Arakhin",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Kodashim/Arakhin/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Avodah Zarah",
+        "title": "Avodah Zarah",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nezikin/Avodah Zarah/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Bava Batra",
+        "title": "Bava Batra",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nezikin/Bava Batra/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Bava Kamma",
+        "title": "Bava Kamma",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nezikin/Bava Kamma/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Bava Metzia",
+        "title": "Bava Metzia",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nezikin/Bava Metzia/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Beitzah",
+        "title": "Beitzah",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Moed/Beitzah/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Bekhorot",
+        "title": "Bekhorot",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Kodashim/Bekhorot/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Berakhot",
+        "title": "Berakhot",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Zeraim/Berakhot/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Chagigah",
+        "title": "Chagigah",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Moed/Chagigah/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Chullin",
+        "title": "Chullin",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Kodashim/Chullin/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Eruvin",
+        "title": "Eruvin",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Moed/Eruvin/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Gittin",
+        "title": "Gittin",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nashim/Gittin/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Horayot",
+        "title": "Horayot",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nezikin/Horayot/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Keritot",
+        "title": "Keritot",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Kodashim/Keritot/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Ketubot",
+        "title": "Ketubot",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nashim/Ketubot/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Kiddushin",
+        "title": "Kiddushin",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nashim/Kiddushin/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Makkot",
+        "title": "Makkot",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nezikin/Makkot/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Megillah",
+        "title": "Megillah",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Moed/Megillah/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Meilah",
+        "title": "Meilah",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Kodashim/Meilah/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Menachot",
+        "title": "Menachot",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Kodashim/Menachot/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Moed Katan",
+        "title": "Moed Katan",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Moed/Moed Katan/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Nazir",
+        "title": "Nazir",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nashim/Nazir/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Nedarim",
+        "title": "Nedarim",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nashim/Nedarim/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Niddah",
+        "title": "Niddah",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Tahorot/Niddah/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Pesachim",
+        "title": "Pesachim",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Moed/Pesachim/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Rosh Hashanah",
+        "title": "Rosh Hashanah",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Moed/Rosh Hashanah/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Sanhedrin",
+        "title": "Sanhedrin",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nezikin/Sanhedrin/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Shabbat",
+        "title": "Shabbat",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Moed/Shabbat/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Shevuot",
+        "title": "Shevuot",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nezikin/Shevuot/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Sotah",
+        "title": "Sotah",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nashim/Sotah/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Sukkah",
+        "title": "Sukkah",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Moed/Sukkah/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Taanit",
+        "title": "Taanit",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Moed/Taanit/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Tamid",
+        "title": "Tamid",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Kodashim/Tamid/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Temurah",
+        "title": "Temurah",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Kodashim/Temurah/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Yevamot",
+        "title": "Yevamot",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Nashim/Yevamot/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Yoma",
+        "title": "Yoma",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Moed/Yoma/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "gemara",
+        "name": "Zevachim",
+        "title": "Zevachim",
+        "versionTitle": "Wikisource Talmud Bavli",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+        "versions": [
+          [
+            "Wikisource Talmud Bavli",
+            "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+          ]
+        ],
+        "sourceJsonPath": "json/Talmud/Bavli/Seder Kodashim/Zevachim/Hebrew/Wikisource Talmud Bavli.json",
+        "licenses": [
+          "CC BY-SA (Wikisource Talmud Bavli)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Admission into the Sanctuary",
+        "title": "Mishneh Torah, Admission into the Sanctuary",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Admission_into_the_Sanctuary",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Avodah/Mishneh Torah, Admission into the Sanctuary/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Agents and Partners",
+        "title": "Mishneh Torah, Agents and Partners",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Agents_and_Partners",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Kinyan/Mishneh Torah, Agents and Partners/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Appraisals and Devoted Property",
+        "title": "Mishneh Torah, Appraisals and Devoted Property",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Appraisals_and_Devoted_Property",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ],
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Haflaah/Mishneh Torah, Appraisals and Devoted Property/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)",
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Blessings",
+        "title": "Mishneh Torah, Blessings",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Blessings",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Ahavah/Mishneh Torah, Blessings/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Borrowing and Deposit",
+        "title": "Mishneh Torah, Borrowing and Deposit",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Borrowing_and_Deposit",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Mishpatim/Mishneh Torah, Borrowing and Deposit/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Circumcision",
+        "title": "Mishneh Torah, Circumcision",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Circumcision",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Ahavah/Mishneh Torah, Circumcision/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Creditor and Debtor",
+        "title": "Mishneh Torah, Creditor and Debtor",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Creditor_and_Debtor",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Mishpatim/Mishneh Torah, Creditor and Debtor/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Daily Offerings and Additional Offerings",
+        "title": "Mishneh Torah, Daily Offerings and Additional Offerings",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Daily_Offerings_and_Additional_Offerings",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Avodah/Mishneh Torah, Daily Offerings and Additional Offerings/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Damages to Property",
+        "title": "Mishneh Torah, Damages to Property",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Damages_to_Property",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Nezikim/Mishneh Torah, Damages to Property/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Defilement by Leprosy",
+        "title": "Mishneh Torah, Defilement by Leprosy",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Defilement_by_Leprosy",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Taharah/Mishneh Torah, Defilement by Leprosy/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Defilement by a Corpse",
+        "title": "Mishneh Torah, Defilement by a Corpse",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Defilement_by_a_Corpse",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Taharah/Mishneh Torah, Defilement by a Corpse/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Defilement of Foods",
+        "title": "Mishneh Torah, Defilement of Foods",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Defilement_of_Foods",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Taharah/Mishneh Torah, Defilement of Foods/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Diverse Species",
+        "title": "Mishneh Torah, Diverse Species",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Diverse_Species",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zeraim/Mishneh Torah, Diverse Species/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Divorce",
+        "title": "Mishneh Torah, Divorce",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Divorce",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ],
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Nashim/Mishneh Torah, Divorce/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)",
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Eruvin",
+        "title": "Mishneh Torah, Eruvin",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Eruvin",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zemanim/Mishneh Torah, Eruvin/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Fasts",
+        "title": "Mishneh Torah, Fasts",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Fasts",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zemanim/Mishneh Torah, Fasts/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Festival Offering",
+        "title": "Mishneh Torah, Festival Offering",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Festival_Offering",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Korbanot/Mishneh Torah, Festival Offering/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "First Fruits and other Gifts to Priests Outside the Sanctuary",
+        "title": "Mishneh Torah, First Fruits and other Gifts to Priests Outside the Sanctuary",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_First_Fruits_and_other_Gifts_to_Priests_Outside_the_Sanctuary",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zeraim/Mishneh Torah, First Fruits and other Gifts to Priests Outside the Sanctuary/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Firstlings",
+        "title": "Mishneh Torah, Firstlings",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Firstlings",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Korbanot/Mishneh Torah, Firstlings/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Forbidden Foods",
+        "title": "Mishneh Torah, Forbidden Foods",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Forbidden_Foods",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Kedushah/Mishneh Torah, Forbidden Foods/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Forbidden Intercourse",
+        "title": "Mishneh Torah, Forbidden Intercourse",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Forbidden_Intercourse",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Kedushah/Mishneh Torah, Forbidden Intercourse/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Foreign Worship and Customs of the Nations",
+        "title": "Mishneh Torah, Foreign Worship and Customs of the Nations",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Foreign_Worship_and_Customs_of_the_Nations",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Madda/Mishneh Torah, Foreign Worship and Customs of the Nations/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Foundations of the Torah",
+        "title": "Mishneh Torah, Foundations of the Torah",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Foundations_of_the_Torah",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Madda/Mishneh Torah, Foundations of the Torah/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Fringes",
+        "title": "Mishneh Torah, Fringes",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Fringes",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Ahavah/Mishneh Torah, Fringes/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Gifts to the Poor",
+        "title": "Mishneh Torah, Gifts to the Poor",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Gifts_to_the_Poor",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zeraim/Mishneh Torah, Gifts to the Poor/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Heave Offerings",
+        "title": "Mishneh Torah, Heave Offerings",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Heave_Offerings",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zeraim/Mishneh Torah, Heave Offerings/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Hiring",
+        "title": "Mishneh Torah, Hiring",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Hiring",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Mishpatim/Mishneh Torah, Hiring/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Human Dispositions",
+        "title": "Mishneh Torah, Human Dispositions",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Human_Dispositions",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Madda/Mishneh Torah, Human Dispositions/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Immersion Pools",
+        "title": "Mishneh Torah, Immersion Pools",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Immersion_Pools",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Taharah/Mishneh Torah, Immersion Pools/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Inheritances",
+        "title": "Mishneh Torah, Inheritances",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Inheritances",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ],
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Mishpatim/Mishneh Torah, Inheritances/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)",
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Kings and Wars",
+        "title": "Mishneh Torah, Kings and Wars",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Kings_and_Wars",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ],
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Shoftim/Mishneh Torah, Kings and Wars/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)",
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Leavened and Unleavened Bread",
+        "title": "Mishneh Torah, Leavened and Unleavened Bread",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Leavened_and_Unleavened_Bread",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%A8%D7%9E%D7%91%22%D7%9D_%D7%94%D7%9C%D7%9B%D7%95%D7%AA_%D7%97%D7%9E%D7%A5_%D7%95%D7%9E%D7%A6%D7%94_%D7%90"
+          ],
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zemanim/Mishneh Torah, Leavened and Unleavened Bread/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)",
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Levirate Marriage and Release",
+        "title": "Mishneh Torah, Levirate Marriage and Release",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Levirate_Marriage_and_Release",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ],
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Nashim/Mishneh Torah, Levirate Marriage and Release/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)",
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Marriage",
+        "title": "Mishneh Torah, Marriage",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Marriage",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Nashim/Mishneh Torah, Marriage/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Mourning",
+        "title": "Mishneh Torah, Mourning",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Mourning",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Shoftim/Mishneh Torah, Mourning/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Murderer and the Preservation of Life",
+        "title": "Mishneh Torah, Murderer and the Preservation of Life",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Murderer_and_the_Preservation_of_Life",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Nezikim/Mishneh Torah, Murderer and the Preservation of Life/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Nazariteship",
+        "title": "Mishneh Torah, Nazariteship",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Nazariteship",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Haflaah/Mishneh Torah, Nazariteship/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Neighbors",
+        "title": "Mishneh Torah, Neighbors",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Neighbors",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Kinyan/Mishneh Torah, Neighbors/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Oaths",
+        "title": "Mishneh Torah, Oaths",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Oaths",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Haflaah/Mishneh Torah, Oaths/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Offerings for Those with Incomplete Atonement",
+        "title": "Mishneh Torah, Offerings for Those with Incomplete Atonement",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Offerings_for_Those_with_Incomplete_Atonement",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Korbanot/Mishneh Torah, Offerings for Those with Incomplete Atonement/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Offerings for Unintentional Transgressions",
+        "title": "Mishneh Torah, Offerings for Unintentional Transgressions",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Offerings_for_Unintentional_Transgressions",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Korbanot/Mishneh Torah, Offerings for Unintentional Transgressions/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "One Who Injures a Person or Property",
+        "title": "Mishneh Torah, One Who Injures a Person or Property",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_One_Who_Injures_a_Person_or_Property",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Nezikim/Mishneh Torah, One Who Injures a Person or Property/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Other Sources of Defilement",
+        "title": "Mishneh Torah, Other Sources of Defilement",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Other_Sources_of_Defilement",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Taharah/Mishneh Torah, Other Sources of Defilement/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Ownerless Property and Gifts",
+        "title": "Mishneh Torah, Ownerless Property and Gifts",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Ownerless_Property_and_Gifts",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Kinyan/Mishneh Torah, Ownerless Property and Gifts/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Paschal Offering",
+        "title": "Mishneh Torah, Paschal Offering",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Paschal_Offering",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Korbanot/Mishneh Torah, Paschal Offering/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Plaintiff and Defendant",
+        "title": "Mishneh Torah, Plaintiff and Defendant",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Plaintiff_and_Defendant",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Mishpatim/Mishneh Torah, Plaintiff and Defendant/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Prayer and the Priestly Blessing",
+        "title": "Mishneh Torah, Prayer and the Priestly Blessing",
+        "versionTitle": "Wikisource Mishneh Torah",
+        "versionSource": "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Ahavah/Mishneh Torah, Prayer and the Priestly Blessing/Hebrew/Wikisource Mishneh Torah.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Reading the Shema",
+        "title": "Mishneh Torah, Reading the Shema",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Reading_the_Shema",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Ahavah/Mishneh Torah, Reading the Shema/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Rebels",
+        "title": "Mishneh Torah, Rebels",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Rebels",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Shoftim/Mishneh Torah, Rebels/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Red Heifer",
+        "title": "Mishneh Torah, Red Heifer",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Red_Heifer",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ],
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Taharah/Mishneh Torah, Red Heifer/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)",
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Repentance",
+        "title": "Mishneh Torah, Repentance",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Repentance",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ],
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Madda/Mishneh Torah, Repentance/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)",
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Rest on a Holiday",
+        "title": "Mishneh Torah, Rest on a Holiday",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Rest_on_a_Holiday",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zemanim/Mishneh Torah, Rest on a Holiday/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Rest on the Tenth of Tishrei",
+        "title": "Mishneh Torah, Rest on the Tenth of Tishrei",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Rest_on_the_Tenth_of_Tishrei",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%A8%D7%9E%D7%91%22%D7%9D_%D7%94%D7%9C%D7%9B%D7%95%D7%AA_%D7%A9%D7%91%D7%AA_%D7%90"
+          ],
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zemanim/Mishneh Torah, Rest on the Tenth of Tishrei/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)",
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Ritual Slaughter",
+        "title": "Mishneh Torah, Ritual Slaughter",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Ritual_Slaughter",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ],
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Kedushah/Mishneh Torah, Ritual Slaughter/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)",
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Robbery and Lost Property",
+        "title": "Mishneh Torah, Robbery and Lost Property",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Robbery_and_Lost_Property",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Nezikim/Mishneh Torah, Robbery and Lost Property/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Sabbath",
+        "title": "Mishneh Torah, Sabbath",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sabbath",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zemanim/Mishneh Torah, Sabbath/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Sabbatical Year and the Jubilee",
+        "title": "Mishneh Torah, Sabbatical Year and the Jubilee",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sabbatical_Year_and_the_Jubilee",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zeraim/Mishneh Torah, Sabbatical Year and the Jubilee/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Sacrifices Rendered Unfit",
+        "title": "Mishneh Torah, Sacrifices Rendered Unfit",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sacrifices_Rendered_Unfit",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Avodah/Mishneh Torah, Sacrifices Rendered Unfit/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Sacrificial Procedure",
+        "title": "Mishneh Torah, Sacrificial Procedure",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sacrificial_Procedure",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Avodah/Mishneh Torah, Sacrificial Procedure/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Sales",
+        "title": "Mishneh Torah, Sales",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sales",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Kinyan/Mishneh Torah, Sales/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Sanctification of the New Month",
+        "title": "Mishneh Torah, Sanctification of the New Month",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sanctification_of_the_New_Month",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zemanim/Mishneh Torah, Sanctification of the New Month/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Scroll of Esther and Hanukkah",
+        "title": "Mishneh Torah, Scroll of Esther and Hanukkah",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Scroll_of_Esther_and_Hanukkah",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zemanim/Mishneh Torah, Scroll of Esther and Hanukkah/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Second Tithes and Fourth Year's Fruit",
+        "title": "Mishneh Torah, Second Tithes and Fourth Year's Fruit",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Second_Tithes_and_Fourth_Year's_Fruit",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zeraim/Mishneh Torah, Second Tithes and Fourth Year's Fruit/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Service on the Day of Atonement",
+        "title": "Mishneh Torah, Service on the Day of Atonement",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Service_on_the_Day_of_Atonement",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Avodah/Mishneh Torah, Service on the Day of Atonement/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Sheqel Dues",
+        "title": "Mishneh Torah, Sheqel Dues",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sheqel_Dues",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zemanim/Mishneh Torah, Sheqel Dues/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Shofar, Sukkah and Lulav",
+        "title": "Mishneh Torah, Shofar, Sukkah and Lulav",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Shofar,_Sukkah_and_Lulav",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zemanim/Mishneh Torah, Shofar, Sukkah and Lulav/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Slaves",
+        "title": "Mishneh Torah, Slaves",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Slaves",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Kinyan/Mishneh Torah, Slaves/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Substitution",
+        "title": "Mishneh Torah, Substitution",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Substitution",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ],
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Korbanot/Mishneh Torah, Substitution/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)",
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Tefillin, Mezuzah and the Torah Scroll",
+        "title": "Mishneh Torah, Tefillin, Mezuzah and the Torah Scroll",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Tefillin,_Mezuzah_and_the_Torah_Scroll",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Ahavah/Mishneh Torah, Tefillin, Mezuzah and the Torah Scroll/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Testimony",
+        "title": "Mishneh Torah, Testimony",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Testimony",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Shoftim/Mishneh Torah, Testimony/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "The Chosen Temple",
+        "title": "Mishneh Torah, The Chosen Temple",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_The_Chosen_Temple",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Avodah/Mishneh Torah, The Chosen Temple/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "The Order of Prayer",
+        "title": "Mishneh Torah, The Order of Prayer",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_The_Order_of_Prayer",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%A8%D7%9E%D7%91%22%D7%9D_%D7%A1%D7%93%D7%A8_%D7%94%D7%AA%D7%A4%D7%99%D7%9C%D7%94_(%D7%91)"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Ahavah/Mishneh Torah, The Order of Prayer/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "The Sanhedrin and the Penalties within Their Jurisdiction",
+        "title": "Mishneh Torah, The Sanhedrin and the Penalties within their Jurisdiction",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_The_Sanhedrin_and_the_Penalties_within_their_Jurisdiction",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Shoftim/Mishneh Torah, The Sanhedrin and the Penalties within their Jurisdiction/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Theft",
+        "title": "Mishneh Torah, Theft",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Theft",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Nezikim/Mishneh Torah, Theft/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Things Forbidden on the Altar",
+        "title": "Mishneh Torah, Things Forbidden on the Alter",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Things_Forbidden_on_the_Alter",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Avodah/Mishneh Torah, Things Forbidden on the Alter/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Those Who Defile Bed or Seat",
+        "title": "Mishneh Torah, Those Who Defile Bed or Seat",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Those_Who_Defile_Bed_or_Seat",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Taharah/Mishneh Torah, Those Who Defile Bed or Seat/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Tithes",
+        "title": "Mishneh Torah, Tithes",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Tithes",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Zeraim/Mishneh Torah, Tithes/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Torah Study",
+        "title": "Mishneh Torah, Torah Study",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Torah_Study",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ],
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Madda/Mishneh Torah, Torah Study/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)",
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Trespass",
+        "title": "Mishneh Torah, Trespass",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Trespass",
+        "versions": [
+          [
+            "Wikisource Mishneh Torah",
+            "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+          ],
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Avodah/Mishneh Torah, Trespass/Hebrew/merged.json",
+        "licenses": [
+          "CC BY-SA (Wikisource)",
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Vessels",
+        "title": "Mishneh Torah, Vessels",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Vessels",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Taharah/Mishneh Torah, Vessels/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Vessels of the Sanctuary and Those Who Serve Therein",
+        "title": "Mishneh Torah, Vessels of the Sanctuary and Those who Serve Therein",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Vessels_of_the_Sanctuary_and_Those_who_Serve_Therein",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Avodah/Mishneh Torah, Vessels of the Sanctuary and Those who Serve Therein/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Virgin Maiden",
+        "title": "Mishneh Torah, Virgin Maiden",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Virgin_Maiden",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Nashim/Mishneh Torah, Virgin Maiden/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Vows",
+        "title": "Mishneh Torah, Vows",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Vows",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Haflaah/Mishneh Torah, Vows/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      },
+      {
+        "mode": "rambam",
+        "name": "Woman Suspected of Infidelity",
+        "title": "Mishneh Torah, Woman Suspected of Infidelity",
+        "versionTitle": "merged",
+        "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Woman_Suspected_of_Infidelity",
+        "versions": [
+          [
+            "Torat Emet 363",
+            "http://www.toratemetfreeware.com/index.html?downloads"
+          ]
+        ],
+        "sourceJsonPath": "json/Halakhah/Mishneh Torah/Sefer Nashim/Mishneh Torah, Woman Suspected of Infidelity/Hebrew/merged.json",
+        "licenses": [
+          "Public Domain (Sefaria source metadata)"
+        ]
+      }
+    ]
+  },
+  "rambam": [
+    {
+      "name": "Foundations of the Torah",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Foundations_of_the_Torah",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Human Dispositions",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Human_Dispositions",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Torah Study",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Torah_Study",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ],
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)",
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Foreign Worship and Customs of the Nations",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Foreign_Worship_and_Customs_of_the_Nations",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Repentance",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Repentance",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ],
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)",
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Reading the Shema",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Reading_the_Shema",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)"
+      ]
+    },
+    {
+      "name": "Prayer and the Priestly Blessing",
+      "versionTitle": "Wikisource Mishneh Torah",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)"
+      ]
+    },
+    {
+      "name": "Tefillin, Mezuzah and the Torah Scroll",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Tefillin,_Mezuzah_and_the_Torah_Scroll",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)"
+      ]
+    },
+    {
+      "name": "Fringes",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Fringes",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)"
+      ]
+    },
+    {
+      "name": "Blessings",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Blessings",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)"
+      ]
+    },
+    {
+      "name": "Circumcision",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Circumcision",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)"
+      ]
+    },
+    {
+      "name": "The Order of Prayer",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_The_Order_of_Prayer",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%A8%D7%9E%D7%91%22%D7%9D_%D7%A1%D7%93%D7%A8_%D7%94%D7%AA%D7%A4%D7%99%D7%9C%D7%94_(%D7%91)"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)"
+      ]
+    },
+    {
+      "name": "Sabbath",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sabbath",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Eruvin",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Eruvin",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Rest on the Tenth of Tishrei",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Rest_on_the_Tenth_of_Tishrei",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%A8%D7%9E%D7%91%22%D7%9D_%D7%94%D7%9C%D7%9B%D7%95%D7%AA_%D7%A9%D7%91%D7%AA_%D7%90"
+        ],
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)",
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Rest on a Holiday",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Rest_on_a_Holiday",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Leavened and Unleavened Bread",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Leavened_and_Unleavened_Bread",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%A8%D7%9E%D7%91%22%D7%9D_%D7%94%D7%9C%D7%9B%D7%95%D7%AA_%D7%97%D7%9E%D7%A5_%D7%95%D7%9E%D7%A6%D7%94_%D7%90"
+        ],
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)",
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Shofar, Sukkah and Lulav",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Shofar,_Sukkah_and_Lulav",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Sheqel Dues",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sheqel_Dues",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Sanctification of the New Month",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sanctification_of_the_New_Month",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Fasts",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Fasts",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Scroll of Esther and Hanukkah",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Scroll_of_Esther_and_Hanukkah",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Marriage",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Marriage",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Divorce",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Divorce",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ],
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)",
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Levirate Marriage and Release",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Levirate_Marriage_and_Release",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ],
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)",
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Virgin Maiden",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Virgin_Maiden",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Woman Suspected of Infidelity",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Woman_Suspected_of_Infidelity",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Forbidden Intercourse",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Forbidden_Intercourse",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Forbidden Foods",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Forbidden_Foods",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Ritual Slaughter",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Ritual_Slaughter",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ],
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)",
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Oaths",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Oaths",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Vows",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Vows",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Nazariteship",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Nazariteship",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Appraisals and Devoted Property",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Appraisals_and_Devoted_Property",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ],
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)",
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Diverse Species",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Diverse_Species",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Gifts to the Poor",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Gifts_to_the_Poor",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Heave Offerings",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Heave_Offerings",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Tithes",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Tithes",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Second Tithes and Fourth Year's Fruit",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Second_Tithes_and_Fourth_Year's_Fruit",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "First Fruits and other Gifts to Priests Outside the Sanctuary",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_First_Fruits_and_other_Gifts_to_Priests_Outside_the_Sanctuary",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Sabbatical Year and the Jubilee",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sabbatical_Year_and_the_Jubilee",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "The Chosen Temple",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_The_Chosen_Temple",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Vessels of the Sanctuary and Those Who Serve Therein",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Vessels_of_the_Sanctuary_and_Those_who_Serve_Therein",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Admission into the Sanctuary",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Admission_into_the_Sanctuary",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Things Forbidden on the Altar",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Things_Forbidden_on_the_Alter",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Sacrificial Procedure",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sacrificial_Procedure",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Daily Offerings and Additional Offerings",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Daily_Offerings_and_Additional_Offerings",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Sacrifices Rendered Unfit",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sacrifices_Rendered_Unfit",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Service on the Day of Atonement",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Service_on_the_Day_of_Atonement",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Trespass",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Trespass",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ],
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)",
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Paschal Offering",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Paschal_Offering",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Festival Offering",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Festival_Offering",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Firstlings",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Firstlings",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Offerings for Unintentional Transgressions",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Offerings_for_Unintentional_Transgressions",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Offerings for Those with Incomplete Atonement",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Offerings_for_Those_with_Incomplete_Atonement",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Substitution",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Substitution",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ],
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)",
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Defilement by a Corpse",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Defilement_by_a_Corpse",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Red Heifer",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Red_Heifer",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ],
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)",
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Defilement by Leprosy",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Defilement_by_Leprosy",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Those Who Defile Bed or Seat",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Those_Who_Defile_Bed_or_Seat",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Other Sources of Defilement",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Other_Sources_of_Defilement",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Defilement of Foods",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Defilement_of_Foods",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Vessels",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Vessels",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Immersion Pools",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Immersion_Pools",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Damages to Property",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Damages_to_Property",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Theft",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Theft",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Robbery and Lost Property",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Robbery_and_Lost_Property",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "One Who Injures a Person or Property",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_One_Who_Injures_a_Person_or_Property",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Murderer and the Preservation of Life",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Murderer_and_the_Preservation_of_Life",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Sales",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Sales",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Ownerless Property and Gifts",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Ownerless_Property_and_Gifts",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Neighbors",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Neighbors",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Agents and Partners",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Agents_and_Partners",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Slaves",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Slaves",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Hiring",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Hiring",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Borrowing and Deposit",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Borrowing_and_Deposit",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Creditor and Debtor",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Creditor_and_Debtor",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Plaintiff and Defendant",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Plaintiff_and_Defendant",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Inheritances",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Inheritances",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ],
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)",
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "The Sanhedrin and the Penalties within Their Jurisdiction",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_The_Sanhedrin_and_the_Penalties_within_their_Jurisdiction",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Testimony",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Testimony",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Rebels",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Rebels",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Mourning",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Mourning",
+      "versions": [
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "Public Domain (Sefaria source metadata)"
+      ]
+    },
+    {
+      "name": "Kings and Wars",
+      "versionTitle": "merged",
+      "versionSource": "http://www.sefaria.org/Mishneh_Torah,_Kings_and_Wars",
+      "versions": [
+        [
+          "Wikisource Mishneh Torah",
+          "http://he.wikisource.org/wiki/%D7%9E%D7%A9%D7%A0%D7%94_%D7%AA%D7%95%D7%A8%D7%94_%D7%9C%D7%A8%D7%9E%D7%91%22%D7%9D"
+        ],
+        [
+          "Torat Emet 363",
+          "http://www.toratemetfreeware.com/index.html?downloads"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource)",
+        "Public Domain (Sefaria source metadata)"
+      ]
+    }
+  ],
+  "gemara": [
+    {
+      "name": "Berakhot",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Shabbat",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Eruvin",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Pesachim",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Rosh Hashanah",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Yoma",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Sukkah",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Beitzah",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Taanit",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Megillah",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Moed Katan",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Chagigah",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Yevamot",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Ketubot",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Nedarim",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Nazir",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Sotah",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Gittin",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Kiddushin",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Bava Kamma",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Bava Metzia",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Bava Batra",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Sanhedrin",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Makkot",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Shevuot",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Avodah Zarah",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Horayot",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Zevachim",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Menachot",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Chullin",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Bekhorot",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Arakhin",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Temurah",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Keritot",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Meilah",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Tamid",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    },
+    {
+      "name": "Niddah",
+      "versionTitle": "Wikisource Talmud Bavli",
+      "versionSource": "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99",
+      "versions": [
+        [
+          "Wikisource Talmud Bavli",
+          "http://he.wikisource.org/wiki/%D7%AA%D7%9C%D7%9E%D7%95%D7%93_%D7%91%D7%91%D7%9C%D7%99"
+        ]
+      ],
+      "licenses": [
+        "CC BY-SA (Wikisource Talmud Bavli)"
+      ]
+    }
+  ]
+}
