@@ -1,6 +1,6 @@
 {
 	"name": "obsidian-pasuk",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"description": "Obsidian plugin to insert bundled offline Tanakh, Rambam, and Gemara texts",
 	"main": "main.js",
 	"scripts": {
