@@ -3,7 +3,7 @@
 	"name": "Torah Verse Inserter",
 	"version": "0.4.1",
 	"minAppVersion": "1.8.7",
-	"description": "Insert Hebrew Bible (Torah/Tanakh) verses with nikud and cantillation, fully offline. Search Hebrew naturally with your regular keyboard — type 'bereshit' to find בראשית, no keyboard switching. Optional translations and AlHaTorah links.",
+	"description": "Insert bundled offline Tanakh, Rambam (Mishneh Torah), and Gemara passages in Obsidian. Search Hebrew naturally and select only the words you need.",
 	"author": "Saleh Penhos",
 	"authorUrl": "https://github.com/spenhos",
 	"fundingUrl": {

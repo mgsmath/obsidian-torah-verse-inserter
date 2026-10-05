@@ -1,6 +1,7 @@
 import { App, Editor, Plugin, PluginSettingTab, Setting } from "obsidian";
 import { PasukModal } from "./modal";
 import { initI18n, t } from "./i18n";
+import { GEMARA_TRACTATES, RAMBAM_BOOKS } from "./study";
 
 export interface PasukSettings {
 	includeNikud: boolean;
@@ -12,6 +13,11 @@ export interface PasukSettings {
 	preferredVersion: string; // versionTitle de Sefaria ("" = sin traducción)
 	preferredVersionDisplay: string;
 	alhatorahLink: boolean;
+	rambamSearchTerms: string;
+	gemaraSearchTerms: string;
+	defaultRambamBook: string;
+	defaultRambamSection: string;
+	defaultGemaraTractate: string;
 }
 
 const DEFAULT_SETTINGS: PasukSettings = {
@@ -24,6 +30,11 @@ const DEFAULT_SETTINGS: PasukSettings = {
 	preferredVersion: "",
 	preferredVersionDisplay: "",
 	alhatorahLink: false,
+	rambamSearchTerms: "rmbm/rm",
+	gemaraSearchTerms: "gm",
+	defaultRambamBook: "",
+	defaultRambamSection: "",
+	defaultGemaraTractate: "",
 };
 
 const GITHUB_URL = "https://github.com/spenhos/obsidian-pasuk";
@@ -72,6 +83,7 @@ class PasukSettingTab extends PluginSettingTab {
 		containerEl.empty();
 		const s = this.plugin.settings;
 		const save = () => void this.plugin.saveSettings();
+		let refreshDefaultRambamSectionOptions: (() => void) | null = null;
 
 		new Setting(containerEl).setName(t("settings")).setHeading();
 
@@ -127,6 +139,79 @@ class PasukSettingTab extends PluginSettingTab {
 					}
 				})
 			);
+
+		new Setting(containerEl).setName(t("studySearches")).setHeading();
+
+		new Setting(containerEl)
+			.setName(t("rambamSearchTerms"))
+			.setDesc(t("rambamSearchTermsDesc"))
+			.addText((txt) =>
+				txt.setValue(s.rambamSearchTerms).onChange((v) => {
+					s.rambamSearchTerms = v;
+					save();
+				})
+			);
+
+		new Setting(containerEl)
+			.setName(t("gemaraSearchTerms"))
+			.setDesc(t("gemaraSearchTermsDesc"))
+			.addText((txt) =>
+				txt.setValue(s.gemaraSearchTerms).onChange((v) => {
+					s.gemaraSearchTerms = v;
+					save();
+				})
+			);
+
+		new Setting(containerEl)
+			.setName(t("defaultRambamBook"))
+			.setDesc(t("defaultRambamBookDesc"))
+			.addDropdown((dropdown) => {
+				dropdown.addOption("", t("chooseSefer"));
+				for (const book of RAMBAM_BOOKS) dropdown.addOption(book.name, book.name);
+				dropdown.setValue(s.defaultRambamBook || "");
+				dropdown.onChange((value) => {
+					s.defaultRambamBook = value;
+					s.defaultRambamSection = "";
+					refreshDefaultRambamSectionOptions?.();
+					save();
+				});
+			});
+
+		new Setting(containerEl)
+			.setName(t("defaultRambamSection"))
+			.setDesc(t("defaultRambamSectionDesc"))
+			.addDropdown((dropdown) => {
+				const refreshOptions = () => {
+					const book = RAMBAM_BOOKS.find((candidate) => candidate.name === s.defaultRambamBook);
+					dropdown.selectEl.options.length = 0;
+					dropdown.addOption("", t("chooseSection"));
+					for (const topic of book?.topics ?? []) dropdown.addOption(topic.name, topic.name);
+					const selectedSection = book?.topics.find(
+						(topic) => topic.name === s.defaultRambamSection
+					);
+					dropdown.setValue(selectedSection?.name ?? "");
+					dropdown.setDisabled(!book);
+				};
+				refreshDefaultRambamSectionOptions = refreshOptions;
+				refreshOptions();
+				dropdown.onChange((value) => {
+					s.defaultRambamSection = value;
+					save();
+				});
+			});
+
+		new Setting(containerEl)
+			.setName(t("defaultGemaraTractate"))
+			.setDesc(t("defaultGemaraTractateDesc"))
+			.addDropdown((dropdown) => {
+				dropdown.addOption("", t("chooseTractate"));
+				for (const tractate of GEMARA_TRACTATES) dropdown.addOption(tractate.name, tractate.name);
+				dropdown.setValue(s.defaultGemaraTractate || "");
+				dropdown.onChange((value) => {
+					s.defaultGemaraTractate = value;
+					save();
+				});
+			});
 
 		new Setting(containerEl).setName(t("support")).setHeading();
 

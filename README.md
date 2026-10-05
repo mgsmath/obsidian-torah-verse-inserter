@@ -2,9 +2,9 @@
 
 # 📖 Torah Verse Inserter
 
-**Insert any Hebrew Bible (Torah / Tanakh) verse into your notes — beautifully, instantly, offline**
+**Insert Hebrew Tanakh verses, Rambam (Mishneh Torah), and Gemara passages into your notes**
 
-Full Hebrew text with nikud & cantillation · Type Hebrew with your **regular keyboard** · Optional translations
+Tanakh, Rambam, and Bavli text work offline · Highlight exactly the words you want to insert
 
 [![GitHub release](https://img.shields.io/github/v/release/spenhos/obsidian-torah-verse-inserter?style=flat-square)](https://github.com/spenhos/obsidian-torah-verse-inserter/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/LICENSE)
@@ -40,8 +40,12 @@ Of course, you can also paste or type **Hebrew directly** (with or without nikud
 ## 📚 What it does
 
 - **Inserts any verse of the Tanakh** (Torah, Nevi'im, Ketuvim — all 39 books) into your note as a clean Markdown quote with its reference.
-- **Complete Hebrew text bundled offline** — the full Miqra according to the Masorah (MAM), with **nikud (vowels) and te'amim (cantillation)**. No internet needed for the Hebrew text. Ever.
-- **Three ways to find a verse:**
+- **Complete Tanakh Hebrew text bundled offline** — the full Miqra according to the Masorah (MAM), with **nikud (vowels) and te'amim (cantillation)**. No internet needed for Tanakh text.
+- **Rambam / Mishneh Torah:** type the configured prefix (default `rmbm` or `rm`), choose one of the 14 books and its section, then enter a location such as `2:4` (chapter:halacha).
+- **Gemara / Babylonian Talmud:** type the configured prefix (default `gm`), choose a tractate, then enter a daf such as `55b`.
+- **Select just the words you need:** after loading a Rambam or Gemara passage, highlight any part of the preview and choose **Insert selection**, or insert the full passage.
+- **Rambam and Gemara text bundled offline:** all 84 Mishneh Torah sections and 37 Bavli tractates are included with the plugin. Study-text lookups do not call Sefaria or require an internet connection.
+- **Three ways to find a Tanakh verse:**
   1. **By reference** — `Genesis 1:1`, `Gén 1:1-3`, `bereshit 1:1`, `תהלים 23` (English, Spanish, transliteration or Hebrew book names, with verse ranges)
   2. **By transliteration** — type `veahavta` with your regular keyboard
   3. **By Hebrew text** — paste בראשית with or without nikud
@@ -54,14 +58,15 @@ Of course, you can also paste or type **Hebrew directly** (with or without nikud
 ## 🚀 How to use
 
 1. **Install & enable** the plugin (Settings → Community plugins → search "Torah" or "Hebrew").
-2. Open a note and run the command **"Insert pasuk (Tanakh verse)"** from the Command Palette (`Cmd/Ctrl+P`).
+2. Open a note and run the command **"Insert Torah text (Tanakh, Rambam, Gemara)"** from the Command Palette (`Cmd/Ctrl+P`).
    💡 *Assign it a hotkey in Settings → Hotkeys (search "pasuk") — e.g. `Cmd+Shift+P`.*
-3. **Search** any of the three ways:
-   - Reference: `shemot 3:14` or `Exodus 3:14` or `Éxodo 3:14`
-   - Transliteration: `ehyeh asher ehyeh` *(regular keyboard — no Hebrew layout needed!)*
-   - Hebrew: `אהיה אשר אהיה`
-4. Optionally pick a **translation** from the dropdown and/or check **AlHaTorah link** — both choices are remembered.
-5. Press **Enter** (or click a result). Done:
+3. **Search** the Tanakh by reference, transliteration, or Hebrew as before. For other texts, type a configured shortcut:
+   - `gm` → choose a Bavli tractate and enter a daf, e.g. `55b`
+   - `rm` or `rmbm` → choose a Mishneh Torah book and section, then enter a location, e.g. `2:4`
+   - You can also type a full shortcut query such as `gm Berakhot 55b` or `rm Zemanim Sabbath 2:4` to preselect the fields.
+4. For long Rambam or Gemara results, highlight the words you want in the preview and click **Insert selection**, or click **Insert full passage**.
+5. For Tanakh verses, optionally pick a **translation** from the dropdown and/or check **AlHaTorah link** — both choices are remembered.
+6. For a Tanakh verse, press **Enter** (or click a result). Done:
 
 ```markdown
 > וַיֹּאמֶר אֱלֹהִים אֶל־מֹשֶׁה אֶהְיֶה אֲשֶׁר אֶהְיֶה...
@@ -86,6 +91,11 @@ Click the **א** button to open a Hebrew keyboard inside the search window — h
 | Include te'amim (cantillation) | Insert Hebrew verses with cantillation marks | Off |
 | Insert as quote block | Wrap verses in a Markdown blockquote with the reference | On |
 | Maximum search results | Limit verses shown when searching by text | 30 |
+| Rambam search terms | Prefixes for Mishneh Torah (slash/comma/semicolon-separated) | `rmbm/rm` |
+| Gemara search terms | Prefixes for Bavli tractate lookup | `gm` |
+| Default Rambam book | Preselect a Mishneh Torah book when the query omits one | None (choose each time) |
+| Default Rambam section | Preselect a section in the default Rambam book when the query omits one | None (choose each time) |
+| Default Gemara tractate | Preselect a Bavli tractate when the query omits one | None (choose each time) |
 | Font compatibility | Replace rare Hebrew marks (qamats qatan, holam haser) with standard equivalents so every font renders them | On |
 
 ---
@@ -94,6 +104,7 @@ Click the **א** button to open a Hebrew keyboard inside the search window — h
 
 - **Hebrew text:** [Miqra according to the Masorah (MAM)](https://en.wikipedia.org/wiki/Miqra_according_to_the_Masorah) — a meticulously accurate digital edition of the Tanakh based on the Aleppo Codex, version-pinned via Sefaria. In ketiv/qere cases, the plugin inserts the **qere** (the form that is read), fully vocalized.
 - **Translations:** fetched on demand from the [Sefaria](https://www.sefaria.org) library (requires internet, optional).
+- **Rambam and Gemara:** Hebrew/Aramaic text is bundled for offline lookup. Rambam is sourced from Sefaria's Hebrew export, primarily the public-domain Torat Emet 363 edition; Wikisource fills the remaining sections and gaps. Bavli uses the Wikisource Talmud Bavli text. See [STUDY_TEXTS.md](STUDY_TEXTS.md) and the per-text [source manifest](tools/study-corpus-sources.json) for attribution, versions, and licensing. Inserted passages keep a Sefaria reference link for optional online study.
 - **Mikraot Gedolot links:** [AlHaTorah.org](https://mg.alhatorah.org).
 
 ---

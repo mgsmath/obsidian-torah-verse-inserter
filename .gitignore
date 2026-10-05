@@ -1,5 +1,6 @@
 node_modules/
 main.js
 src/data/
+tools/study-cache/
 .DS_Store
 data.json
