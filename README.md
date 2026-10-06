@@ -71,6 +71,13 @@ Workflow:
 3. Choose the **section** in Hebrew
 4. Enter a location such as `2:4`
 
+Inserted Rambam citations use `רמב״ם:<section> <chapter>:<halacha>`:
+
+```md
+> הַחוֹבֵל בַּחֲבֵרוֹ חַיָּב לְשַׁלֵּם לוֹ חֲמִשָּׁה דְּבָרִים...
+> — רמב״ם:חובל ומזיק א:א
+```
+
 ## Usage
 
 1. Enable the plugin in Obsidian.
@@ -81,7 +88,8 @@ Workflow:
 4. For Rambam or Gemara:
    - load the passage
    - optionally highlight only the words you want
-   - click **Insert selection** or just press **Enter**
+   - click **Insert selection**, or highlight the text and press **Enter** directly —
+     no need to click back into the search box first
 5. For Tanakh, choose a result and it will be inserted with a Hebrew reference.
 
 ## Settings
@@ -89,6 +97,7 @@ Workflow:
 - Include nikud
 - Include te'amim
 - Insert as quote block
+- Quotation marks (used when the quote block is off)
 - Maximum search results
 - Rambam search terms
 - Gemara search terms

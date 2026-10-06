@@ -11,6 +11,7 @@ export interface PasukSettings {
 	includeNikud: boolean;
 	includeTeamim: boolean;
 	quoteFormat: boolean;
+	quoteMarks: boolean;
 	inlineReference: boolean;
 	maxResults: number;
 	fontCompat: boolean;
@@ -27,6 +28,7 @@ const DEFAULT_SETTINGS: PasukSettings = {
 	includeNikud: true,
 	includeTeamim: false,
 	quoteFormat: true,
+	quoteMarks: false,
 	inlineReference: false,
 	maxResults: 30,
 	fontCompat: true,
@@ -123,7 +125,19 @@ class PasukSettingTab extends PluginSettingTab {
 				})
 			);
 
-				new Setting(containerEl)
+		// Only used when the block quote is off: a quoted passage with the
+		// reference in parentheses, e.g. "בראשית ברא..." (בראשית א:א).
+		new Setting(containerEl)
+			.setName(t("quoteMarks"))
+			.setDesc(t("quoteMarksDesc"))
+			.addToggle((tg) =>
+				tg.setValue(s.quoteMarks).onChange((v) => {
+					s.quoteMarks = v;
+					save();
+				})
+			);
+
+		new Setting(containerEl)
 			.setName(t("inlineReference"))
 			.setDesc(t("inlineReferenceDesc"))
 			.addToggle((tg) =>
