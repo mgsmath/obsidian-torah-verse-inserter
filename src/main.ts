@@ -11,6 +11,7 @@ export interface PasukSettings {
 	includeNikud: boolean;
 	includeTeamim: boolean;
 	quoteFormat: boolean;
+	inlineReference: boolean;
 	maxResults: number;
 	fontCompat: boolean;
 	alefBetOpen: boolean;
@@ -26,6 +27,7 @@ const DEFAULT_SETTINGS: PasukSettings = {
 	includeNikud: true,
 	includeTeamim: false,
 	quoteFormat: true,
+	inlineReference: false,
 	maxResults: 30,
 	fontCompat: true,
 	alefBetOpen: false,
@@ -62,6 +64,11 @@ export default class PasukPlugin extends Plugin {
 	async loadSettings() {
 		const data = (await this.loadData()) as Partial<PasukSettings> | null;
 		this.settings = Object.assign({}, DEFAULT_SETTINGS, data);
+
+		// Backwards compatibility: previously, disabling quoteFormat always resulted in an inline reference.
+		if (data && data.quoteFormat === false && typeof data.inlineReference === "undefined") {
+			this.settings.inlineReference = true;
+		}
 	}
 
 	async saveSettings() {
@@ -112,6 +119,16 @@ class PasukSettingTab extends PluginSettingTab {
 			.addToggle((tg) =>
 				tg.setValue(s.quoteFormat).onChange((v) => {
 					s.quoteFormat = v;
+					save();
+				})
+			);
+
+				new Setting(containerEl)
+			.setName(t("inlineReference"))
+			.setDesc(t("inlineReferenceDesc"))
+			.addToggle((tg) =>
+				tg.setValue(s.inlineReference).onChange((v) => {
+					s.inlineReference = v;
 					save();
 				})
 			);

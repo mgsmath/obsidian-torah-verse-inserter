@@ -4,7 +4,7 @@ import { BookInfo } from "./books";
 import { formatBookReferenceInHebrew, formatRefLabel, parseRef } from "./refparse";
 import { getVerses } from "./corpus";
 import { searchText, SearchHit } from "./search";
-import { formatHebrew, formatHebrewDaf, formatHebrewLocation } from "./hebrew";
+import { formatHebrew, formatHebrewDaf, formatHebrewDafShort, formatHebrewLocation } from "./hebrew";
 import { currentLang, t } from "./i18n";
 import {
 	lookupStudyHebrew,
@@ -181,9 +181,21 @@ export class PasukModal extends Modal {
 	}
 
 	onOpen() {
+		this.modalEl.addClass("pasuk-modal-container");
 		const { contentEl } = this;
 		contentEl.addClass("pasuk-modal");
 		this.titleEl.setText(t("modalTitle"));
+
+		this.modalEl.addEventListener("keydown", (evt) => {
+			if (evt.key === "Enter" && this.studyPassage) {
+				evt.preventDefault();
+				evt.stopPropagation();
+				void this.insertStudyPassage(
+					this.studyPassage,
+					this.selectedStudyText.trim() ? this.selectedStudyText : null
+				);
+			}
+		});
 
 		this.inputEl = contentEl.createEl("input", {
 			type: "text",
@@ -233,6 +245,7 @@ export class PasukModal extends Modal {
 				this.select(this.selected - 1);
 			} else if (evt.key === "Enter") {
 				evt.preventDefault();
+				evt.stopPropagation();
 				if (this.activeStudyMode) {
 					if (this.studyPassage) {
 						void this.insertStudyPassage(
@@ -425,7 +438,13 @@ export class PasukModal extends Modal {
 			const tractateInfo = GEMARA_TRACTATES.find((candidate) => candidate.name === tractate);
 			this.studyRemainder = `${tractate} ${daf}`;
 			const ref = `${tractate}.${daf}`;
-			const label = `${tractateInfo?.heName ?? tractate} ${formatHebrewDaf(daf)}`;
+			let label = "";
+			const heDaf = formatHebrewDafShort(daf);
+			if (this.settings.defaultGemaraTractate && tractate === this.settings.defaultGemaraTractate) {
+				label = heDaf;
+			} else {
+				label = `${tractateInfo?.heName ?? tractate} ${heDaf}`;
+			}
 			void this.fetchStudyPassage(ref, label, "gemara");
 		};
 		this.submitStudySearch = submit;
@@ -521,7 +540,15 @@ export class PasukModal extends Modal {
 			const [chapter, halacha] = location.split(":");
 			this.studyRemainder = `${book.name} ${topic.name} ${location}`;
 			const ref = `Mishneh Torah, ${topic.name}.${chapter}.${halacha}`;
-			const label = `משנה תורה · ${book.heName} · ${topic.heName} ${formatHebrewLocation(Number(chapter), Number(halacha))}`;
+			
+			let label = "";
+			const heLocation = formatHebrewLocation(Number(chapter), Number(halacha));
+			if (this.settings.defaultRambamBook && book.name === this.settings.defaultRambamBook) {
+				label = `רמב״ם ${topic.heName} ${heLocation}`;
+			} else {
+				label = `${book.shortHeName || book.heName} רמב״ם\\${topic.heName} ${heLocation}`;
+			}
+			
 			void this.fetchStudyPassage(ref, label, "rambam");
 		};
 		this.submitStudySearch = submit;
@@ -673,11 +700,29 @@ export class PasukModal extends Modal {
 		const content = (selection ?? passage.segments.join("\n")).replace(/\r/g, "").trim();
 		if (!content) return;
 		let text: string;
-		if (this.settings.quoteFormat) {
-			const quoted = content.split("\n").map((line) => `> ${line}`).join("\n");
-			text = `${quoted}\n> — ${passage.label}\n`;
+		if (this.settings.inlineReference) {
+			if (this.settings.quoteFormat) {
+				const lines = content.split("\n");
+				if (lines.length > 0) {
+					lines[lines.length - 1] += ` (${passage.label})`;
+				}
+				const quoted = lines.map((line) => `> ${line}`).join("\n");
+				text = `${quoted}\n`;
+			} else {
+				// Non-quoted inline
+				const lines = content.split("\n");
+				if (lines.length > 0) {
+					lines[lines.length - 1] += ` (${passage.label})`;
+				}
+				text = lines.join("\n");
+			}
 		} else {
-			text = `${content} (${passage.label})`;
+			if (this.settings.quoteFormat) {
+				const quoted = content.split("\n").map((line) => `> ${line}`).join("\n");
+				text = `${quoted}\n> — ${passage.label}\n`;
+			} else {
+				text = `${content}\n— ${passage.label}\n`;
+			}
 		}
 		this.editor.replaceSelection(text);
 		this.close();
@@ -740,11 +785,24 @@ export class PasukModal extends Modal {
 		);
 
 		let text: string;
-		if (this.settings.quoteFormat) {
-			const quoted = lines.map((l) => `> ${l}`).join("\n");
-			text = `${quoted}\n> — ${source}\n`;
+		if (this.settings.inlineReference) {
+			if (this.settings.quoteFormat) {
+				const newLines = [...lines];
+				if (newLines.length > 0) {
+					newLines[newLines.length - 1] += ` (${source})`;
+				}
+				const quoted = newLines.map((l) => `> ${l}`).join("\n");
+				text = `${quoted}\n`;
+			} else {
+				text = `${lines.join(" ")} (${source})`;
+			}
 		} else {
-			text = `${lines.join(" ")} (${source})`;
+			if (this.settings.quoteFormat) {
+				const quoted = lines.map((l) => `> ${l}`).join("\n");
+				text = `${quoted}\n> — ${source}\n`;
+			} else {
+				text = `${lines.join(" ")}\n— ${source}\n`;
+			}
 		}
 
 		this.editor.replaceSelection(text);
