@@ -1,6 +1,16 @@
 /* ===== Pasuk modal ===== */
+.pasuk-modal-container {
+	width: 80vw !important;
+	max-width: 900px !important;
+	height: 85vh !important;
+	max-height: 800px !important;
+}
+
 .pasuk-modal {
 	padding: 12px;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 .pasuk-input {
@@ -110,7 +120,8 @@
 }
 
 .pasuk-results {
-	max-height: 50vh;
+	flex: 1 1 auto;
+	min-height: 0;
 	overflow-y: auto;
 }
 
@@ -199,6 +210,15 @@
 	flex-wrap: wrap;
 	gap: 8px;
 	align-items: center;
+}
+
+.pasuk-study-preview-actions {
+	position: sticky;
+	bottom: -1px;
+	background: var(--background-primary);
+	padding: 10px 0 0 0;
+	margin-top: 10px;
+	border-top: 1px solid var(--background-modifier-border);
 }
 
 .pasuk-study-button {

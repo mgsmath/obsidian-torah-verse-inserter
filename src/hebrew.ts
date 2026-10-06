@@ -91,3 +91,9 @@ export function formatHebrewDaf(daf: string): string {
 	if (!match) return daf;
 	return `דף ${toHebrewNumber(Number(match[1]))} ע״${match[2] === "a" ? "א" : "ב"}`;
 }
+
+export function formatHebrewDafShort(daf: string): string {
+	const match = daf.trim().toLowerCase().match(/^(\d{1,3})([ab])$/);
+	if (!match) return daf;
+	return `${toHebrewNumber(Number(match[1]))}${match[2] === "a" ? "." : ":"}`;
+}
