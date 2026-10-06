@@ -125,8 +125,9 @@ class PasukSettingTab extends PluginSettingTab {
 				})
 			);
 
-		// Only used when the block quote is off: a quoted passage with the
-		// reference in parentheses, e.g. "בראשית ברא..." (בראשית א:א).
+		// Wraps the inserted text in "quotes" in every format; without a quote
+		// block the reference goes in parentheses after it, e.g.
+		// "בראשית ברא..." (בראשית א:א).
 		new Setting(containerEl)
 			.setName(t("quoteMarks"))
 			.setDesc(t("quoteMarksDesc"))
