@@ -299,7 +299,7 @@ export class PasukModal extends Modal {
 	}
 
 	private async runSearch() {
-		const q = this.inputEl.value.trim();
+		const q = this.inputEl.value.trim().replace(/(\d)\s+(?=\d)/g, "$1:");
 		const seq = ++this.searchSeq;
 		this.items = [];
 		this.selected = 0;
@@ -527,7 +527,7 @@ export class PasukModal extends Modal {
 
 		const submit = () => {
 			if (!form.reportValidity()) return;
-			const location = locationInput.value.trim();
+			const location = locationInput.value.trim().replace(/(\d)\s+(?=\d)/g, "$1:");
 			if (!/^\d{1,3}:\d{1,3}$/.test(location)) {
 				errorEl.setText(t("invalidLocation"));
 				locationInput.focus();
