@@ -1,18 +1,18 @@
 <div align="center">
 
-# 📖 Torah Verse Inserter
+# 📖 Shiur Notes Inserter
 
 **הוסיפו כל פסוק מהתנ״ך לפתקים שלכם — יפה, מיידי, ללא אינטרנט**
 
 טקסט עברי מלא עם ניקוד וטעמים · הקלידו עברית עם **המקלדת הרגילה** · תרגומים אופציונליים
 
-[![GitHub release](https://img.shields.io/github/v/release/spenhos/obsidian-torah-verse-inserter?style=flat-square)](https://github.com/spenhos/obsidian-torah-verse-inserter/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/mgsmath/obsidian-torah-verse-inserter?style=flat-square)](https://github.com/mgsmath/obsidian-torah-verse-inserter/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/LICENSE)
 [![Ko-fi](https://img.shields.io/badge/Support-Ko--fi-FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/elevalma)
 
-🌐 [English](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README.md) | [Español](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_es.md) | עברית | [العربية](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_ar.md) | [Français](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_fr.md) | [Русский](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_ru.md) | [Português](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_pt.md)
+🌐 [English](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README.md) | [Español](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_es.md) | עברית | [العربية](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_ar.md) | [Français](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_fr.md) | [Русский](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_ru.md) | [Português](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_pt.md)
 
-![Torah Verse Inserter — חיפוש בעברית עם המקלדת הרגילה](https://raw.githubusercontent.com/spenhos/obsidian-torah-verse-inserter/main/assets/he/hero.svg)
+![Shiur Notes Inserter — חיפוש בעברית עם המקלדת הרגילה](https://raw.githubusercontent.com/mgsmath/obsidian-torah-verse-inserter/main/assets/he/hero.svg)
 
 </div>
 
@@ -26,7 +26,7 @@
 
 </div>
 
-![זרימת התעתיק — bereshit מוצא את העברית](https://raw.githubusercontent.com/spenhos/obsidian-torah-verse-inserter/main/assets/he/translit-flow.svg)
+![זרימת התעתיק — bereshit מוצא את העברית](https://raw.githubusercontent.com/mgsmath/obsidian-torah-verse-inserter/main/assets/he/translit-flow.svg)
 
 <div dir="rtl">
 
@@ -84,7 +84,7 @@
 
 </div>
 
-![מקלדת אלף־בית על המסך — איך זה עובד](https://raw.githubusercontent.com/spenhos/obsidian-torah-verse-inserter/main/assets/he/keyboard.svg)
+![מקלדת אלף־בית על המסך — איך זה עובד](https://raw.githubusercontent.com/mgsmath/obsidian-torah-verse-inserter/main/assets/he/keyboard.svg)
 
 ---
 
@@ -112,13 +112,13 @@
 
 ## ☕ תמיכה
 
-Torah Verse Inserter הוא חינמי וקוד פתוח. אם הוא עוזר ללימוד התורה או לעבודה שלכם בעברית, אפשר לתמוך בפיתוח:
+Shiur Notes Inserter הוא חינמי וקוד פתוח. אם הוא עוזר ללימוד התורה או לעבודה שלכם בעברית, אפשר לתמוך בפיתוח:
 
 </div>
 
 [![תמכו ב-Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/elevalma)
 
-[![חסות ב-GitHub](https://img.shields.io/badge/%D7%97%D7%A1%D7%95%D7%AA-%E2%9D%A4-db61a2?logo=github&style=for-the-badge)](https://github.com/sponsors/spenhos)
+[![חסות ב-GitHub](https://img.shields.io/badge/%D7%97%D7%A1%D7%95%D7%AA-%E2%9D%A4-db61a2?logo=github&style=for-the-badge)](https://github.com/sponsors/mgsmath)
 
 ---
 
@@ -126,9 +126,9 @@ Torah Verse Inserter הוא חינמי וקוד פתוח. אם הוא עוזר �
 
 ## 🤝 תרומה לפרויקט
 
-Issues ו־PRs יתקבלו בברכה — במיוחד מקרי תעתיק שלא מצאו את מה שציפיתם, או כינויי ספרים בשפה שלכם. [פתחו issue](https://github.com/spenhos/obsidian-torah-verse-inserter/issues) עם דוגמה.
+Issues ו־PRs יתקבלו בברכה — במיוחד מקרי תעתיק שלא מצאו את מה שציפיתם, או כינויי ספרים בשפה שלכם. [פתחו issue](https://github.com/mgsmath/obsidian-torah-verse-inserter/issues) עם דוגמה.
 
-> מחפשים חיפוש ללא ניקוד בתוך הפתקים שלכם? הכירו את התוסף האחר שלי: [Diacritics-Free Search](https://github.com/spenhos/obsidian-diacritics-free-search).
+> מחפשים חיפוש ללא ניקוד בתוך הפתקים שלכם? הכירו את התוסף האחר שלי: [Diacritics-Free Search](https://github.com/mgsmath/obsidian-diacritics-free-search).
 
 </div>
 
@@ -138,6 +138,6 @@ Issues ו־PRs יתקבלו בברכה — במיוחד מקרי תעתיק של
 
 נוצר באהבה ❤️ ללומדי תורה ולשפה העברית
 
-**[Saleh Penhos](https://github.com/spenhos)**
+**[mgsmath](https://github.com/mgsmath)**
 
 </div>

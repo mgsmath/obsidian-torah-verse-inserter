@@ -1,18 +1,18 @@
 <div align="center">
 
-# 📖 Torah Verse Inserter
+# 📖 Shiur Notes Inserter
 
 **Insira qualquer versículo da Bíblia hebraica (Torá / Tanakh) nas suas notas — bonito, instantâneo, offline**
 
 Texto hebraico completo com nikud e cantilação · Digite hebraico com o **teclado normal** · Traduções opcionais
 
-[![GitHub release](https://img.shields.io/github/v/release/spenhos/obsidian-torah-verse-inserter?style=flat-square)](https://github.com/spenhos/obsidian-torah-verse-inserter/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/mgsmath/obsidian-torah-verse-inserter?style=flat-square)](https://github.com/mgsmath/obsidian-torah-verse-inserter/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/LICENSE)
 [![Ko-fi](https://img.shields.io/badge/Support-Ko--fi-FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/elevalma)
 
-🌐 [English](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README.md) | [Español](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_es.md) | [עברית](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_he.md) | [العربية](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_ar.md) | [Français](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_fr.md) | [Русский](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_ru.md) | Português
+🌐 [English](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README.md) | [Español](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_es.md) | [עברית](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_he.md) | [العربية](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_ar.md) | [Français](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_fr.md) | [Русский](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_ru.md) | Português
 
-![Torah Verse Inserter — pesquise hebraico com o teclado normal](https://raw.githubusercontent.com/spenhos/obsidian-torah-verse-inserter/main/assets/pt/hero.svg)
+![Shiur Notes Inserter — pesquise hebraico com o teclado normal](https://raw.githubusercontent.com/mgsmath/obsidian-torah-verse-inserter/main/assets/pt/hero.svg)
 
 </div>
 
@@ -22,7 +22,7 @@ Texto hebraico completo com nikud e cantilação · Digite hebraico com o **tecl
 
 Pesquisar texto hebraico normalmente significa alternar o layout do teclado o tempo todo. **Aqui não.** Digite como você pronuncia — o plugin entende a transliteração latina *naturalmente* e encontra o hebraico:
 
-![Fluxo de transliteração — bereshit encontra o hebraico](https://raw.githubusercontent.com/spenhos/obsidian-torah-verse-inserter/main/assets/pt/translit-flow.svg)
+![Fluxo de transliteração — bereshit encontra o hebraico](https://raw.githubusercontent.com/mgsmath/obsidian-torah-verse-inserter/main/assets/pt/translit-flow.svg)
 
 | Você digita (teclado normal) | Ele encontra (hebraico) |
 |---|---|
@@ -74,7 +74,7 @@ Claro, você também pode colar ou digitar **hebraico diretamente** (com ou sem 
 
 Clique no botão **א** para abrir um teclado hebraico dentro da janela de pesquisa — útil quando você quer uma letra específica (como ע vs א). Passe o mouse sobre qualquer tecla para ver seu nome e som. Ele lembra se você o deixou aberto.
 
-![Teclado alef-bet na tela — como funciona](https://raw.githubusercontent.com/spenhos/obsidian-torah-verse-inserter/main/assets/pt/keyboard.svg)
+![Teclado alef-bet na tela — como funciona](https://raw.githubusercontent.com/mgsmath/obsidian-torah-verse-inserter/main/assets/pt/keyboard.svg)
 
 ---
 
@@ -100,19 +100,19 @@ Clique no botão **א** para abrir um teclado hebraico dentro da janela de pesqu
 
 ## ☕ Apoio
 
-Torah Verse Inserter é gratuito e de código aberto. Se ele ajuda no seu estudo de Torá ou no seu trabalho com hebraico, você pode apoiar o desenvolvimento:
+Shiur Notes Inserter é gratuito e de código aberto. Se ele ajuda no seu estudo de Torá ou no seu trabalho com hebraico, você pode apoiar o desenvolvimento:
 
 [![Apoie no Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/elevalma)
 
-[![Apoiar no GitHub](https://img.shields.io/badge/Apoiar-%E2%9D%A4-db61a2?logo=github&style=for-the-badge)](https://github.com/sponsors/spenhos)
+[![Apoiar no GitHub](https://img.shields.io/badge/Apoiar-%E2%9D%A4-db61a2?logo=github&style=for-the-badge)](https://github.com/sponsors/mgsmath)
 
 ---
 
 ## 🤝 Contribuindo
 
-Issues e PRs são bem-vindos — especialmente casos de transliteração que não encontraram o que você esperava, ou apelidos de livros no seu idioma. [Abra um issue](https://github.com/spenhos/obsidian-torah-verse-inserter/issues) com um exemplo.
+Issues e PRs são bem-vindos — especialmente casos de transliteração que não encontraram o que você esperava, ou apelidos de livros no seu idioma. [Abra um issue](https://github.com/mgsmath/obsidian-torah-verse-inserter/issues) com um exemplo.
 
-> Procurando pesquisa sem diacríticos dentro das suas próprias notas? Conheça meu outro plugin: [Diacritics-Free Search](https://github.com/spenhos/obsidian-diacritics-free-search).
+> Procurando pesquisa sem diacríticos dentro das suas próprias notas? Conheça meu outro plugin: [Diacritics-Free Search](https://github.com/mgsmath/obsidian-diacritics-free-search).
 
 ---
 
@@ -120,6 +120,6 @@ Issues e PRs são bem-vindos — especialmente casos de transliteração que nã
 
 Feito com ❤️ para estudantes da Torá e da língua hebraica
 
-**[Saleh Penhos](https://github.com/spenhos)**
+**[mgsmath](https://github.com/mgsmath)**
 
 </div>

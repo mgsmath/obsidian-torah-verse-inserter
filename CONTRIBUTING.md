@@ -1,4 +1,4 @@
-# Contributing to Torah Verse Inserter
+# Contributing to Shiur Notes Inserter
 
 Thank you for your interest in improving this plugin! Contributions of all kinds are welcome.
 
@@ -11,7 +11,7 @@ The most valuable reports for this plugin:
 - **Text issues** — anything that looks wrong in the inserted Hebrew (nikud, te'amim, ketiv/qere). Please include the verse reference and a screenshot.
 - **Translation issues** — a Sefaria version that fails to load or renders oddly.
 
-[Open an issue](https://github.com/spenhos/obsidian-torah-verse-inserter/issues) with as much detail as you can.
+[Open an issue](https://github.com/mgsmath/obsidian-torah-verse-inserter/issues) with as much detail as you can.
 
 ## 🌍 Translations
 
@@ -26,7 +26,7 @@ Corrections from native speakers are very welcome. To add a new language, add a 
 ## 🛠️ Development setup
 
 ```bash
-git clone https://github.com/spenhos/obsidian-torah-verse-inserter.git
+git clone https://github.com/mgsmath/obsidian-torah-verse-inserter.git
 cd obsidian-torah-verse-inserter
 npm install
 npm run build-corpus   # generates src/data/corpus.ts from tools/cache (required once)
