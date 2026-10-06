@@ -4,7 +4,7 @@ import { BookInfo } from "./books";
 import { formatBookReferenceInHebrew, formatRefLabel, parseRef } from "./refparse";
 import { getVerses } from "./corpus";
 import { searchText, SearchHit } from "./search";
-import { formatHebrew, formatHebrewDaf, formatHebrewDafShort, formatHebrewLocation } from "./hebrew";
+import { formatHebrew, formatHebrewDafShort, formatHebrewLocation } from "./hebrew";
 import { currentLang, t } from "./i18n";
 import {
 	lookupStudyHebrew,
@@ -82,6 +82,17 @@ function consumeLeadingName(input: string, name: string): string | null {
 		if (normalizeOptionWord(inputWords[i]) !== normalizeOptionWord(nameWords[i])) return null;
 	}
 	return inputWords.slice(nameWords.length).join(" ").trim();
+}
+
+/**
+ * Elements that handle Enter on their own (typing, form submit, button activation).
+ * Enter must not be intercepted while one of them has focus.
+ */
+function handlesEnterItself(target: EventTarget | null): boolean {
+	if (!(target instanceof HTMLElement)) return false;
+	if (target.isContentEditable) return true;
+	const tag = target.tagName;
+	return tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || tag === "BUTTON";
 }
 
 function parseDaf(value: string): string | null {
@@ -169,6 +180,7 @@ export class PasukModal extends Modal {
 	private studySelectionStatusEl: HTMLElement | null = null;
 	private studyInsertSelectionButton: HTMLButtonElement | null = null;
 	private selectionChangeHandler: (() => void) | null = null;
+	private globalKeydownHandler: ((evt: KeyboardEvent) => void) | null = null;
 
 	constructor(app: App, editor: Editor, plugin: PasukPlugin) {
 		super(app);
@@ -186,16 +198,11 @@ export class PasukModal extends Modal {
 		contentEl.addClass("pasuk-modal");
 		this.titleEl.setText(t("modalTitle"));
 
-		this.modalEl.addEventListener("keydown", (evt) => {
-			if (evt.key === "Enter" && this.studyPassage) {
-				evt.preventDefault();
-				evt.stopPropagation();
-				void this.insertStudyPassage(
-					this.studyPassage,
-					this.selectedStudyText.trim() ? this.selectedStudyText : null
-				);
-			}
-		});
+		// Listen on the document, in the capture phase: after highlighting text in the
+		// preview the focus leaves the search field (it lands on <body> or on the modal
+		// container), so a keydown listener bound to the modal element never sees Enter.
+		this.globalKeydownHandler = (evt) => this.handleGlobalKeydown(evt);
+		activeDocument.addEventListener("keydown", this.globalKeydownHandler, true);
 
 		this.inputEl = contentEl.createEl("input", {
 			type: "text",
@@ -248,10 +255,7 @@ export class PasukModal extends Modal {
 				evt.stopPropagation();
 				if (this.activeStudyMode) {
 					if (this.studyPassage) {
-						void this.insertStudyPassage(
-							this.studyPassage,
-						this.selectedStudyText.trim() ? this.selectedStudyText : null
-						);
+						this.insertStudySelectionOrFull();
 					} else {
 						this.submitStudySearch?.();
 					}
@@ -276,7 +280,37 @@ export class PasukModal extends Modal {
 			activeDocument.removeEventListener("selectionchange", this.selectionChangeHandler);
 		}
 		this.selectionChangeHandler = null;
+		if (this.globalKeydownHandler) {
+			activeDocument.removeEventListener("keydown", this.globalKeydownHandler, true);
+		}
+		this.globalKeydownHandler = null;
 		this.contentEl.empty();
+	}
+
+	/**
+	 * Enter inserts the highlighted selection (or the whole passage when nothing is
+	 * selected) without having to click back into the search field first.
+	 */
+	private handleGlobalKeydown(evt: KeyboardEvent) {
+		if (evt.key !== "Enter" || evt.defaultPrevented || evt.isComposing) return;
+		if (!this.studyPassage) return;
+		if (handlesEnterItself(evt.target)) return;
+
+		const target = evt.target instanceof Node ? evt.target : null;
+		const insideModal = target ? this.containerEl.contains(target) : false;
+		// Focus sits on <body> after a mouse selection in the preview; anything else
+		// (another modal, another pane) must keep its own Enter behavior.
+		if (!insideModal && target !== activeDocument.body) return;
+
+		evt.preventDefault();
+		evt.stopPropagation();
+		this.insertStudySelectionOrFull();
+	}
+
+	private insertStudySelectionOrFull() {
+		const passage = this.studyPassage;
+		if (!passage) return;
+		this.insertStudyPassage(passage, this.selectedStudyText.trim() ? this.selectedStudyText : null);
 	}
 
 	/** Inserta una letra del teclado en la posición del cursor del input. */
@@ -540,15 +574,11 @@ export class PasukModal extends Modal {
 			const [chapter, halacha] = location.split(":");
 			this.studyRemainder = `${book.name} ${topic.name} ${location}`;
 			const ref = `Mishneh Torah, ${topic.name}.${chapter}.${halacha}`;
-			
-			let label = "";
+			// Citation format: רמב״ם:<section> <chapter>:<halacha>. Section titles are
+			// unique across the Mishneh Torah, and the `רמב״ם:` prefix tells them apart
+			// from same-named Gemara tractates (e.g. ברכות).
 			const heLocation = formatHebrewLocation(Number(chapter), Number(halacha));
-			if (this.settings.defaultRambamBook && book.name === this.settings.defaultRambamBook) {
-				label = `רמב״ם ${topic.heName} ${heLocation}`;
-			} else {
-				label = `${book.shortHeName || book.heName} רמב״ם\\${topic.heName} ${heLocation}`;
-			}
-			
+			const label = `רמב״ם:${topic.heName} ${heLocation}`;
 			void this.fetchStudyPassage(ref, label, "rambam");
 		};
 		this.submitStudySearch = submit;
@@ -766,7 +796,7 @@ export class PasukModal extends Modal {
 		children[this.selected]?.scrollIntoView({ block: "nearest" });
 	}
 
-	private async insertSelected() {
+	private insertSelected() {
 		const item = this.items[this.selected];
 		if (!item) return;
 		const opts = {
