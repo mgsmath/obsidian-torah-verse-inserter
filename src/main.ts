@@ -1,7 +1,11 @@
 import { App, Editor, Plugin, PluginSettingTab, Setting } from "obsidian";
 import { PasukModal } from "./modal";
 import { initI18n, t } from "./i18n";
-import { GEMARA_TRACTATES, RAMBAM_BOOKS } from "./study";
+import {
+	DEFAULT_GEMARA_TRACTATE_ALIASES,
+	GEMARA_TRACTATES,
+	RAMBAM_BOOKS,
+} from "./study";
 
 export interface PasukSettings {
 	includeNikud: boolean;
@@ -10,11 +14,9 @@ export interface PasukSettings {
 	maxResults: number;
 	fontCompat: boolean;
 	alefBetOpen: boolean;
-	preferredVersion: string; // versionTitle de Sefaria ("" = sin traducción)
-	preferredVersionDisplay: string;
-	alhatorahLink: boolean;
 	rambamSearchTerms: string;
 	gemaraSearchTerms: string;
+	gemaraTractateAliases: string;
 	defaultRambamBook: string;
 	defaultRambamSection: string;
 	defaultGemaraTractate: string;
@@ -27,18 +29,15 @@ const DEFAULT_SETTINGS: PasukSettings = {
 	maxResults: 30,
 	fontCompat: true,
 	alefBetOpen: false,
-	preferredVersion: "",
-	preferredVersionDisplay: "",
-	alhatorahLink: false,
 	rambamSearchTerms: "rmbm/rm",
 	gemaraSearchTerms: "gm",
+	gemaraTractateAliases: DEFAULT_GEMARA_TRACTATE_ALIASES,
 	defaultRambamBook: "",
 	defaultRambamSection: "",
 	defaultGemaraTractate: "",
 };
 
-const GITHUB_URL = "https://github.com/spenhos/obsidian-pasuk";
-const KOFI_URL = "https://ko-fi.com/elevalma";
+const GITHUB_URL = "https://github.com/mgsmath/obsidian-torah-verse-inserter";
 
 export default class PasukPlugin extends Plugin {
 	settings: PasukSettings;
@@ -163,11 +162,24 @@ class PasukSettingTab extends PluginSettingTab {
 			);
 
 		new Setting(containerEl)
+			.setName(t("gemaraTractateAliases"))
+			.setDesc(t("gemaraTractateAliasesDesc"))
+			.addTextArea((txt) => {
+				txt.setValue(s.gemaraTractateAliases).onChange((v) => {
+					s.gemaraTractateAliases = v;
+					save();
+				});
+				txt.inputEl.rows = 8;
+				txt.inputEl.cols = 40;
+				txt.inputEl.addClass("pasuk-setting-textarea");
+			});
+
+		new Setting(containerEl)
 			.setName(t("defaultRambamBook"))
 			.setDesc(t("defaultRambamBookDesc"))
 			.addDropdown((dropdown) => {
 				dropdown.addOption("", t("chooseSefer"));
-				for (const book of RAMBAM_BOOKS) dropdown.addOption(book.name, book.name);
+				for (const book of RAMBAM_BOOKS) dropdown.addOption(book.name, book.heName);
 				dropdown.setValue(s.defaultRambamBook || "");
 				dropdown.onChange((value) => {
 					s.defaultRambamBook = value;
@@ -185,7 +197,7 @@ class PasukSettingTab extends PluginSettingTab {
 					const book = RAMBAM_BOOKS.find((candidate) => candidate.name === s.defaultRambamBook);
 					dropdown.selectEl.options.length = 0;
 					dropdown.addOption("", t("chooseSection"));
-					for (const topic of book?.topics ?? []) dropdown.addOption(topic.name, topic.name);
+					for (const topic of book?.topics ?? []) dropdown.addOption(topic.name, topic.heName);
 					const selectedSection = book?.topics.find(
 						(topic) => topic.name === s.defaultRambamSection
 					);
@@ -205,7 +217,9 @@ class PasukSettingTab extends PluginSettingTab {
 			.setDesc(t("defaultGemaraTractateDesc"))
 			.addDropdown((dropdown) => {
 				dropdown.addOption("", t("chooseTractate"));
-				for (const tractate of GEMARA_TRACTATES) dropdown.addOption(tractate.name, tractate.name);
+				for (const tractate of GEMARA_TRACTATES) {
+					dropdown.addOption(tractate.name, tractate.heName);
+				}
 				dropdown.setValue(s.defaultGemaraTractate || "");
 				dropdown.onChange((value) => {
 					s.defaultGemaraTractate = value;
@@ -213,25 +227,13 @@ class PasukSettingTab extends PluginSettingTab {
 				});
 			});
 
-		new Setting(containerEl).setName(t("support")).setHeading();
-
-		new Setting(containerEl)
-			.setName(t("supportBtn"))
-			.setDesc(t("supportDesc"))
-			.addButton((button) => {
-				button
-					.setButtonText("☕ " + t("supportBtn"))
-					.onClick(() => window.open(KOFI_URL, "_blank"));
-				button.buttonEl.addClass("pasuk-kofi-btn");
-				return button;
-			});
-
 		const about = containerEl.createDiv({ cls: "pasuk-about" });
-		about.createSpan({ text: `Pasuk v${this.plugin.manifest.version} · ` });
+		about.createSpan({ text: `Shiur Notes Inserter v${this.plugin.manifest.version} · ` });
 		const gh = about.createEl("a", { text: t("viewGithub"), href: GITHUB_URL });
 		gh.setAttr("target", "_blank");
 		about.createSpan({ text: " · " });
 		const issue = about.createEl("a", { text: t("reportIssue"), href: GITHUB_URL + "/issues" });
 		issue.setAttr("target", "_blank");
+		about.createEl("div", { text: "Originally created by Saleh Penhos." });
 	}
 }

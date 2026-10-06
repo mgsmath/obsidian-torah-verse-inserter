@@ -1,15 +1,15 @@
 // Modal de búsqueda e inserción de pesukim y textos de estudio.
-import { App, Editor, Modal, Notice } from "obsidian";
-import { alhatorahUrl, BookInfo, sefariaRef } from "./books";
-import { formatRefLabel, parseRef } from "./refparse";
+import { App, Editor, Modal } from "obsidian";
+import { BookInfo } from "./books";
+import { formatBookReferenceInHebrew, formatRefLabel, parseRef } from "./refparse";
 import { getVerses } from "./corpus";
 import { searchText, SearchHit } from "./search";
-import { formatHebrew } from "./hebrew";
+import { formatHebrew, formatHebrewDaf, formatHebrewLocation } from "./hebrew";
 import { currentLang, t } from "./i18n";
-import { fetchTranslation, listVersions } from "./sefaria";
 import {
 	lookupStudyHebrew,
 	GEMARA_TRACTATES,
+	gemaraTractateNames,
 	matchStudyPrefix,
 	RAMBAM_BOOKS,
 } from "./study";
@@ -24,6 +24,7 @@ interface ResultItem {
 	verseEnd: number;
 	verses: string[]; // texto original
 	preview: string;
+	wholeChapter?: boolean;
 }
 
 interface StudyPassage {
@@ -69,7 +70,7 @@ function normalizeOptionWord(value: string): string {
 		.toLocaleLowerCase()
 		.normalize("NFD")
 		.replace(/[\u0300-\u036f]/g, "")
-		.replace(/[^a-z0-9]/g, "");
+		.replace(/[^a-z0-9\u0590-\u05ff]/g, "");
 }
 
 /** Return the remainder when `input` starts with all words in `name`. */
@@ -93,10 +94,15 @@ function parseLocation(value: string): string | null {
 	return match ? match[1] : null;
 }
 
-function parseGemaraRemainder(remainder: string): { tractate: string; daf: string } {
+function parseGemaraRemainder(
+	remainder: string,
+	tractateAliases: string
+): { tractate: string; daf: string } {
 	for (const tractate of GEMARA_TRACTATES) {
-		const rest = consumeLeadingName(remainder, tractate.name);
-		if (rest !== null) return { tractate: tractate.name, daf: parseDaf(rest) ?? "" };
+		for (const candidate of gemaraTractateNames(tractate, tractateAliases)) {
+			const rest = consumeLeadingName(remainder, candidate);
+			if (rest !== null) return { tractate: tractate.name, daf: parseDaf(rest) ?? "" };
+		}
 	}
 	return { tractate: "", daf: "" };
 }
@@ -107,14 +113,19 @@ function parseRambamRemainder(remainder: string): {
 	location: string;
 } {
 	for (const book of RAMBAM_BOOKS) {
-		const afterFullName = consumeLeadingName(remainder, book.name);
-		const afterShortName = afterFullName === null ? consumeLeadingName(remainder, book.shortName) : null;
-		const afterBook = afterFullName ?? afterShortName;
+		const bookCandidates = [book.name, book.shortName, book.heName, book.shortHeName];
+		let afterBook: string | null = null;
+		for (const candidate of bookCandidates) {
+			afterBook = consumeLeadingName(remainder, candidate);
+			if (afterBook !== null) break;
+		}
 		if (afterBook === null) continue;
 		for (const topic of book.topics) {
-			const afterTopic = consumeLeadingName(afterBook, topic.name);
-			if (afterTopic !== null) {
-				return { book, topic, location: parseLocation(afterTopic) ?? "" };
+			for (const candidate of [topic.name, topic.heName]) {
+				const afterTopic = consumeLeadingName(afterBook, candidate);
+				if (afterTopic !== null) {
+					return { book, topic, location: parseLocation(afterTopic) ?? "" };
+				}
 			}
 		}
 		return { book, topic: null, location: "" };
@@ -125,9 +136,12 @@ function parseRambamRemainder(remainder: string): {
 	const matches: Array<{ book: RambamBook; topic: StudyTopic; location: string }> = [];
 	for (const book of RAMBAM_BOOKS) {
 		for (const topic of book.topics) {
-			const afterTopic = consumeLeadingName(remainder, topic.name);
-			if (afterTopic !== null) {
-				matches.push({ book, topic, location: parseLocation(afterTopic) ?? "" });
+			for (const candidate of [topic.name, topic.heName]) {
+				const afterTopic = consumeLeadingName(remainder, candidate);
+				if (afterTopic !== null) {
+					matches.push({ book, topic, location: parseLocation(afterTopic) ?? "" });
+					break;
+				}
 			}
 		}
 	}
@@ -141,15 +155,11 @@ export class PasukModal extends Modal {
 	private resultsEl: HTMLElement;
 	private hintEl: HTMLElement;
 	private alefBetEl: HTMLElement;
-	private versionSelect: HTMLSelectElement;
-	private versionWrap: HTMLElement;
-	private ahtLabel: HTMLLabelElement;
 	private items: ResultItem[] = [];
 	private selected = 0;
 	private debounce: number | null = null;
 	private searchSeq = 0;
 	private studyRequestSeq = 0;
-	private versionsLoadedFor: string | null = null;
 	private activeStudyMode: StudyMode | null = null;
 	private studyRemainder = "";
 	private submitStudySearch: (() => void) | null = null;
@@ -181,43 +191,12 @@ export class PasukModal extends Modal {
 			cls: "pasuk-input",
 		});
 
-		// Toolbar: teclado alef-bet + traducción
 		const toolbar = contentEl.createDiv({ cls: "pasuk-toolbar" });
 
 		const kbToggle = toolbar.createEl("button", {
 			text: "א",
 			cls: "pasuk-kb-toggle",
 			attr: { "aria-label": t("toggleKeyboard") },
-		});
-
-		this.versionWrap = toolbar.createDiv({ cls: "pasuk-version-wrap" });
-		this.versionWrap.createSpan({ text: t("translationLabel") + " ", cls: "pasuk-version-label" });
-		this.versionSelect = this.versionWrap.createEl("select", { cls: "pasuk-version-select" });
-		this.versionSelect.createEl("option", { text: t("noTranslation"), value: "" });
-		if (this.settings.preferredVersion) {
-			// opción persistida (el listado completo se carga al abrir el dropdown)
-			const opt = this.versionSelect.createEl("option", {
-				text: this.settings.preferredVersionDisplay || this.settings.preferredVersion,
-				value: this.settings.preferredVersion,
-			});
-			opt.selected = true;
-		}
-		this.versionSelect.addEventListener("mousedown", () => void this.loadVersions());
-		this.versionSelect.addEventListener("change", () => {
-			const opt = this.versionSelect.selectedOptions[0];
-			this.settings.preferredVersion = this.versionSelect.value;
-			this.settings.preferredVersionDisplay = opt ? opt.text : "";
-			void this.plugin.saveSettings();
-		});
-
-		// Checkbox: link a AlHaTorah (persistido)
-		this.ahtLabel = toolbar.createEl("label", { cls: "pasuk-aht-label" });
-		const ahtCheck = this.ahtLabel.createEl("input", { type: "checkbox" });
-		ahtCheck.checked = this.settings.alhatorahLink;
-		this.ahtLabel.appendText(" " + t("alhatorahLink"));
-		ahtCheck.addEventListener("change", () => {
-			this.settings.alhatorahLink = ahtCheck.checked;
-			void this.plugin.saveSettings();
 		});
 
 		// Teclado alef-bet (plegable, estado persistido)
@@ -299,39 +278,11 @@ export class PasukModal extends Modal {
 		el.dispatchEvent(new Event("input"));
 	}
 
-	/** Carga el listado de versiones para el libro del resultado seleccionado. */
-	private async loadVersions() {
-		const book = this.items[this.selected]?.book;
-		const ref = book ? sefariaRef(book) : "Genesis";
-		if (this.versionsLoadedFor === ref) return;
-		try {
-			const versions = await listVersions(ref, currentLang());
-			const current = this.versionSelect.value;
-			this.versionSelect.empty();
-			this.versionSelect.createEl("option", { text: t("noTranslation"), value: "" });
-			for (const v of versions) {
-				const opt = this.versionSelect.createEl("option", {
-					text: `(${v.lang}) ${v.display}`,
-					value: v.title,
-				});
-				if (v.title === current) opt.selected = true;
-			}
-			this.versionsLoadedFor = ref;
-		} catch {
-			// sin red: se queda la opción persistida
-		}
-	}
-
 	private searchHint(): string {
 		return t("hint", {
 			rambamTerms: this.settings.rambamSearchTerms || "—",
 			gemaraTerms: this.settings.gemaraSearchTerms || "—",
 		});
-	}
-
-	private showStudyToolbar(show: boolean) {
-		this.versionWrap.toggleClass("pasuk-hidden", show);
-		this.ahtLabel.toggleClass("pasuk-hidden", show);
 	}
 
 	private async runSearch() {
@@ -345,7 +296,6 @@ export class PasukModal extends Modal {
 			this.activeStudyMode = prefix.mode;
 			this.studyRemainder = prefix.remainder;
 			this.studyRequestSeq++;
-			this.showStudyToolbar(true);
 			this.hintEl.setText(t(prefix.mode === "gemara" ? "gemaraHint" : "rambamHint"));
 			this.renderStudyForm(prefix.mode, prefix.remainder);
 			return;
@@ -360,7 +310,6 @@ export class PasukModal extends Modal {
 		this.studySelectionStatusEl = null;
 		this.studyInsertSelectionButton = null;
 		this.studyRequestSeq++;
-		this.showStudyToolbar(false);
 		this.hintEl.setText(this.searchHint());
 
 		if (!q) {
@@ -382,6 +331,7 @@ export class PasukModal extends Modal {
 						verseEnd: Math.min(ref.verseEnd, ref.verseStart + verses.length - 1),
 						verses,
 						preview: verses[0],
+					wholeChapter: ref.wholeChapter,
 					},
 				];
 			}
@@ -394,13 +344,17 @@ export class PasukModal extends Modal {
 		if (seq !== this.searchSeq) return;
 		const lang = currentLang();
 		this.items = hits.map((h: SearchHit) => ({
-			label: `${lang === "es" ? h.book.es : lang === "he" ? h.book.he : h.book.en} ${h.chapter}:${h.verse}`,
+			label:
+				lang === "he"
+					? formatBookReferenceInHebrew(h.book, h.chapter, h.verse, h.verse)
+					: `${lang === "es" ? h.book.es : h.book.en} ${h.chapter}:${h.verse}`,
 			book: h.book,
 			chapter: h.chapter,
 			verseStart: h.verse,
 			verseEnd: h.verse,
 			verses: [h.text],
 			preview: h.text,
+			wholeChapter: false,
 		}));
 		this.render();
 	}
@@ -421,7 +375,7 @@ export class PasukModal extends Modal {
 
 	private renderGemaraForm(remainder: string) {
 		const form = this.resultsEl.createEl("form", { cls: "pasuk-study-form" });
-		const prefill = parseGemaraRemainder(remainder);
+		const prefill = parseGemaraRemainder(remainder, this.settings.gemaraTractateAliases);
 		const selectField = form.createDiv({ cls: "pasuk-study-field" });
 		const selectId = "pasuk-gemara-tractate";
 		selectField.createEl("label", { text: t("tractateLabel"), attr: { for: selectId } });
@@ -431,7 +385,7 @@ export class PasukModal extends Modal {
 		});
 		tractateSelect.createEl("option", { text: t("chooseTractate"), value: "" });
 		for (const tractate of GEMARA_TRACTATES) {
-			tractateSelect.createEl("option", { text: tractate.name, value: tractate.name });
+			tractateSelect.createEl("option", { text: tractate.heName, value: tractate.name });
 		}
 		const defaultTractate = GEMARA_TRACTATES.find(
 			(tractate) => tractate.name === this.settings.defaultGemaraTractate
@@ -468,9 +422,11 @@ export class PasukModal extends Modal {
 			}
 			errorEl.empty();
 			const tractate = tractateSelect.value;
+			const tractateInfo = GEMARA_TRACTATES.find((candidate) => candidate.name === tractate);
 			this.studyRemainder = `${tractate} ${daf}`;
 			const ref = `${tractate}.${daf}`;
-			void this.fetchStudyPassage(ref, `${tractate} ${daf}`, "gemara");
+			const label = `${tractateInfo?.heName ?? tractate} ${formatHebrewDaf(daf)}`;
+			void this.fetchStudyPassage(ref, label, "gemara");
 		};
 		this.submitStudySearch = submit;
 		form.addEventListener("submit", (evt) => {
@@ -495,7 +451,7 @@ export class PasukModal extends Modal {
 		});
 		bookSelect.createEl("option", { text: t("chooseSefer"), value: "" });
 		for (const book of RAMBAM_BOOKS) {
-			bookSelect.createEl("option", { text: book.name, value: book.name });
+			bookSelect.createEl("option", { text: book.heName, value: book.name });
 		}
 
 		const sectionField = form.createDiv({ cls: "pasuk-study-field" });
@@ -510,7 +466,7 @@ export class PasukModal extends Modal {
 			sectionSelect.empty();
 			sectionSelect.createEl("option", { text: t("chooseSection"), value: "" });
 			for (const topic of book?.topics ?? []) {
-				sectionSelect.createEl("option", { text: topic.name, value: topic.name });
+				sectionSelect.createEl("option", { text: topic.heName, value: topic.name });
 			}
 			sectionSelect.disabled = !book;
 		};
@@ -565,7 +521,7 @@ export class PasukModal extends Modal {
 			const [chapter, halacha] = location.split(":");
 			this.studyRemainder = `${book.name} ${topic.name} ${location}`;
 			const ref = `Mishneh Torah, ${topic.name}.${chapter}.${halacha}`;
-			const label = `Mishneh Torah · ${book.name} · ${topic.name} ${chapter}:${halacha}`;
+			const label = `משנה תורה · ${book.heName} · ${topic.heName} ${formatHebrewLocation(Number(chapter), Number(halacha))}`;
 			void this.fetchStudyPassage(ref, label, "rambam");
 		};
 		this.submitStudySearch = submit;
@@ -716,14 +672,12 @@ export class PasukModal extends Modal {
 	private insertStudyPassage(passage: StudyPassage, selection: string | null) {
 		const content = (selection ?? passage.segments.join("\n")).replace(/\r/g, "").trim();
 		if (!content) return;
-		const sefariaRef = encodeURIComponent(passage.ref.replace(/\s+/g, "_"));
-		const sourceLink = `[Sefaria](https://www.sefaria.org/${sefariaRef})`;
 		let text: string;
 		if (this.settings.quoteFormat) {
 			const quoted = content.split("\n").map((line) => `> ${line}`).join("\n");
-			text = `${quoted}\n> — ${passage.label} · ${sourceLink}\n`;
+			text = `${quoted}\n> — ${passage.label}\n`;
 		} else {
-			text = `${content} (${passage.label}) ${sourceLink}`;
+			text = `${content} (${passage.label})`;
 		}
 		this.editor.replaceSelection(text);
 		this.close();
@@ -777,46 +731,20 @@ export class PasukModal extends Modal {
 		};
 		const lines = item.verses.map((v) => formatHebrew(v, opts));
 
-		// Traducción opcional (online)
-		let translation: string[] | null = null;
-		let versionLabel = "";
-		const version = this.settings.preferredVersion;
-		if (version) {
-			try {
-				translation = await fetchTranslation(
-					sefariaRef(item.book),
-					item.chapter,
-					item.verseStart,
-					item.verseEnd,
-					version
-				);
-				if (!translation) new Notice(t("noTranslationForPassage"));
-				else
-					versionLabel = (this.settings.preferredVersionDisplay || version)
-						.replace(/\[/g, "(")
-						.replace(/\]/g, ")");
-			} catch {
-				new Notice(t("translationFetchError"));
-			}
-		}
-
-		const ahtLink = this.settings.alhatorahLink
-			? `[AlHaTorah](${alhatorahUrl(item.book, item.chapter, item.verseStart)})`
-			: "";
+		const source = formatBookReferenceInHebrew(
+			item.book,
+			item.chapter,
+			item.verseStart,
+			item.verseEnd,
+			item.wholeChapter ?? false
+		);
 
 		let text: string;
 		if (this.settings.quoteFormat) {
-			let quoted = lines.map((l) => `> ${l}`).join("\n");
-			if (translation) {
-				quoted += "\n>\n" + translation.map((l) => `> ${l}`).join("\n");
-			}
-			let source = versionLabel ? `${item.label} · ${versionLabel}` : item.label;
-			if (ahtLink) source += ` · ${ahtLink}`;
+			const quoted = lines.map((l) => `> ${l}`).join("\n");
 			text = `${quoted}\n> — ${source}\n`;
 		} else {
-			text = `${lines.join(" ")} (${item.label})`;
-			if (translation) text += `\n${translation.join(" ")}`;
-			if (ahtLink) text += ` ${ahtLink}`;
+			text = `${lines.join(" ")} (${source})`;
 		}
 
 		this.editor.replaceSelection(text);

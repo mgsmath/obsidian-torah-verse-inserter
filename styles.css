@@ -176,7 +176,8 @@
 }
 
 .pasuk-study-select,
-.pasuk-study-input {
+.pasuk-study-input,
+.pasuk-setting-textarea {
 	width: 100%;
 	min-width: 0;
 	padding: 7px 9px;
@@ -187,7 +188,8 @@
 }
 
 .pasuk-study-select:focus,
-.pasuk-study-input:focus {
+.pasuk-study-input:focus,
+.pasuk-setting-textarea:focus {
 	border-color: var(--interactive-accent);
 	outline: none;
 }

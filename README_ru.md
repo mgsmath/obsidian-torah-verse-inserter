@@ -1,18 +1,18 @@
 <div align="center">
 
-# 📖 Torah Verse Inserter
+# 📖 Shiur Notes Inserter
 
 **Вставляйте любой стих еврейской Библии (Тора / Танах) в свои заметки — красиво, мгновенно, офлайн**
 
 Полный текст на иврите с никудом и кантилляцией · Печатайте иврит **обычной клавиатурой** · Опциональные переводы
 
-[![GitHub release](https://img.shields.io/github/v/release/spenhos/obsidian-torah-verse-inserter?style=flat-square)](https://github.com/spenhos/obsidian-torah-verse-inserter/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/LICENSE)
+[![GitHub release](https://img.shields.io/github/v/release/mgsmath/obsidian-torah-verse-inserter?style=flat-square)](https://github.com/mgsmath/obsidian-torah-verse-inserter/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/LICENSE)
 [![Ko-fi](https://img.shields.io/badge/Support-Ko--fi-FF5E5B?style=flat-square&logo=ko-fi&logoColor=white)](https://ko-fi.com/elevalma)
 
-🌐 [English](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README.md) | [Español](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_es.md) | [עברית](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_he.md) | [العربية](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_ar.md) | [Français](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_fr.md) | Русский | [Português](https://github.com/spenhos/obsidian-torah-verse-inserter/blob/main/README_pt.md)
+🌐 [English](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README.md) | [Español](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_es.md) | [עברית](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_he.md) | [العربية](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_ar.md) | [Français](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_fr.md) | Русский | [Português](https://github.com/mgsmath/obsidian-torah-verse-inserter/blob/main/README_pt.md)
 
-![Torah Verse Inserter — ищите иврит обычной клавиатурой](https://raw.githubusercontent.com/spenhos/obsidian-torah-verse-inserter/main/assets/ru/hero.svg)
+![Shiur Notes Inserter — ищите иврит обычной клавиатурой](https://raw.githubusercontent.com/mgsmath/obsidian-torah-verse-inserter/main/assets/ru/hero.svg)
 
 </div>
 
@@ -22,7 +22,7 @@
 
 Поиск ивритского текста обычно означает постоянное переключение раскладки. **Не здесь.** Печатайте так, как произносите — плагин понимает латинскую транслитерацию *естественно* и находит иврит:
 
-![Поток транслитерации — bereshit находит иврит](https://raw.githubusercontent.com/spenhos/obsidian-torah-verse-inserter/main/assets/ru/translit-flow.svg)
+![Поток транслитерации — bereshit находит иврит](https://raw.githubusercontent.com/mgsmath/obsidian-torah-verse-inserter/main/assets/ru/translit-flow.svg)
 
 | Вы печатаете (обычная клавиатура) | Он находит (иврит) |
 |---|---|
@@ -74,7 +74,7 @@
 
 Нажмите кнопку **א**, чтобы открыть ивритскую клавиатуру прямо в окне поиска — удобно, когда нужна конкретная буква (например ע против א). Наведите на клавишу, чтобы увидеть её название и звук. Плагин запоминает, оставили ли вы её открытой.
 
-![Экранная клавиатура алеф-бет — как это работает](https://raw.githubusercontent.com/spenhos/obsidian-torah-verse-inserter/main/assets/ru/keyboard.svg)
+![Экранная клавиатура алеф-бет — как это работает](https://raw.githubusercontent.com/mgsmath/obsidian-torah-verse-inserter/main/assets/ru/keyboard.svg)
 
 ---
 
@@ -100,19 +100,19 @@
 
 ## ☕ Поддержка
 
-Torah Verse Inserter — бесплатный плагин с открытым исходным кодом. Если он помогает вашему изучению Торы или работе с ивритом, вы можете поддержать разработку:
+Shiur Notes Inserter — бесплатный плагин с открытым исходным кодом. Если он помогает вашему изучению Торы или работе с ивритом, вы можете поддержать разработку:
 
 [![Поддержать на Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/elevalma)
 
-[![Поддержать на GitHub](https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=github&style=for-the-badge)](https://github.com/sponsors/spenhos)
+[![Поддержать на GitHub](https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=github&style=for-the-badge)](https://github.com/sponsors/mgsmath)
 
 ---
 
 ## 🤝 Участие
 
-Issues и PR приветствуются — особенно случаи транслитерации, которые не нашли ожидаемого, или варианты названий книг на вашем языке. [Откройте issue](https://github.com/spenhos/obsidian-torah-verse-inserter/issues) с примером.
+Issues и PR приветствуются — особенно случаи транслитерации, которые не нашли ожидаемого, или варианты названий книг на вашем языке. [Откройте issue](https://github.com/mgsmath/obsidian-torah-verse-inserter/issues) с примером.
 
-> Ищете поиск без учёта диакритики по собственным заметкам? Посмотрите мой другой плагин: [Diacritics-Free Search](https://github.com/spenhos/obsidian-diacritics-free-search).
+> Ищете поиск без учёта диакритики по собственным заметкам? Посмотрите мой другой плагин: [Diacritics-Free Search](https://github.com/mgsmath/obsidian-diacritics-free-search).
 
 ---
 
@@ -120,6 +120,6 @@ Issues и PR приветствуются — особенно случаи тр
 
 Сделано с ❤️ для изучающих Тору и иврит
 
-**[Saleh Penhos](https://github.com/spenhos)**
+**[mgsmath](https://github.com/mgsmath)**
 
 </div>

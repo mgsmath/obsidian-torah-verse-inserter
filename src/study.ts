@@ -1,234 +1,287 @@
-// Offline Torah-study lookup backed by the bundled Sefaria text corpus.
+// Offline Torah-study lookup backed by the bundled Hebrew/Aramaic text corpus.
 import { GEMARA_GZ, RAMBAM_GZ } from "./study-corpus";
 
 export type StudyMode = "rambam" | "gemara";
 
 export interface StudyTopic {
 	name: string;
+	heName: string;
 }
 
 export interface RambamBook {
 	name: string;
+	heName: string;
 	shortName: string;
+	shortHeName: string;
 	topics: StudyTopic[];
 }
 
 export interface GemaraTractate {
 	name: string;
+	heName: string;
 }
 
-/** The 14 books of the Mishneh Torah and their Sefaria topic titles. */
+/** The 14 books of the Mishneh Torah and their section titles. */
 export const RAMBAM_BOOKS: RambamBook[] = [
 	{
 		name: "Sefer Madda",
+		heName: "ספר המדע",
 		shortName: "Madda",
+		shortHeName: "המדע",
 		topics: [
-			{ name: "Foundations of the Torah" },
-			{ name: "Human Dispositions" },
-			{ name: "Torah Study" },
-			{ name: "Foreign Worship and Customs of the Nations" },
-			{ name: "Repentance" },
+			{ name: "Foundations of the Torah", heName: "יסודי התורה" },
+			{ name: "Human Dispositions", heName: "דעות" },
+			{ name: "Torah Study", heName: "תלמוד תורה" },
+			{
+				name: "Foreign Worship and Customs of the Nations",
+				heName: "עבודה זרה וחוקות הגויים",
+			},
+			{ name: "Repentance", heName: "תשובה" },
 		],
 	},
 	{
 		name: "Sefer Ahavah",
+		heName: "ספר אהבה",
 		shortName: "Ahavah",
+		shortHeName: "אהבה",
 		topics: [
-			{ name: "Reading the Shema" },
-			{ name: "Prayer and the Priestly Blessing" },
-			{ name: "Tefillin, Mezuzah and the Torah Scroll" },
-			{ name: "Fringes" },
-			{ name: "Blessings" },
-			{ name: "Circumcision" },
-			{ name: "The Order of Prayer" },
+			{ name: "Reading the Shema", heName: "קריאת שמע" },
+			{ name: "Prayer and the Priestly Blessing", heName: "תפילה וברכת כהנים" },
+			{ name: "Tefillin, Mezuzah and the Torah Scroll", heName: "תפילין ומזוזה וספר תורה" },
+			{ name: "Fringes", heName: "ציצית" },
+			{ name: "Blessings", heName: "ברכות" },
+			{ name: "Circumcision", heName: "מילה" },
+			{ name: "The Order of Prayer", heName: "סדר התפילות" },
 		],
 	},
 	{
 		name: "Sefer Zemanim",
+		heName: "ספר זמנים",
 		shortName: "Zemanim",
+		shortHeName: "זמנים",
 		topics: [
-			{ name: "Sabbath" },
-			{ name: "Eruvin" },
-			{ name: "Rest on the Tenth of Tishrei" },
-			{ name: "Rest on a Holiday" },
-			{ name: "Leavened and Unleavened Bread" },
-			{ name: "Shofar, Sukkah and Lulav" },
-			{ name: "Sheqel Dues" },
-			{ name: "Sanctification of the New Month" },
-			{ name: "Fasts" },
-			{ name: "Scroll of Esther and Hanukkah" },
+			{ name: "Sabbath", heName: "שבת" },
+			{ name: "Eruvin", heName: "עירובין" },
+			{ name: "Rest on the Tenth of Tishrei", heName: "שביתת עשור" },
+			{ name: "Rest on a Holiday", heName: "שביתת יום טוב" },
+			{ name: "Leavened and Unleavened Bread", heName: "חמץ ומצה" },
+			{ name: "Shofar, Sukkah and Lulav", heName: "שופר וסוכה ולולב" },
+			{ name: "Sheqel Dues", heName: "שקלים" },
+			{ name: "Sanctification of the New Month", heName: "קידוש החודש" },
+			{ name: "Fasts", heName: "תעניות" },
+			{ name: "Scroll of Esther and Hanukkah", heName: "מגילה וחנוכה" },
 		],
 	},
 	{
 		name: "Sefer Nashim",
+		heName: "ספר נשים",
 		shortName: "Nashim",
+		shortHeName: "נשים",
 		topics: [
-			{ name: "Marriage" },
-			{ name: "Divorce" },
-			{ name: "Levirate Marriage and Release" },
-			{ name: "Virgin Maiden" },
-			{ name: "Woman Suspected of Infidelity" },
+			{ name: "Marriage", heName: "אישות" },
+			{ name: "Divorce", heName: "גירושין" },
+			{ name: "Levirate Marriage and Release", heName: "יבום וחליצה" },
+			{ name: "Virgin Maiden", heName: "נערה בתולה" },
+			{ name: "Woman Suspected of Infidelity", heName: "סוטה" },
 		],
 	},
 	{
 		name: "Sefer Kedushah",
+		heName: "ספר קדושה",
 		shortName: "Kedushah",
+		shortHeName: "קדושה",
 		topics: [
-			{ name: "Forbidden Intercourse" },
-			{ name: "Forbidden Foods" },
-			{ name: "Ritual Slaughter" },
+			{ name: "Forbidden Intercourse", heName: "איסורי ביאה" },
+			{ name: "Forbidden Foods", heName: "מאכלות אסורות" },
+			{ name: "Ritual Slaughter", heName: "שחיטה" },
 		],
 	},
 	{
 		name: "Sefer Haflaah",
+		heName: "ספר הפלאה",
 		shortName: "Haflaah",
+		shortHeName: "הפלאה",
 		topics: [
-			{ name: "Oaths" },
-			{ name: "Vows" },
-			{ name: "Nazariteship" },
-			{ name: "Appraisals and Devoted Property" },
+			{ name: "Oaths", heName: "שבועות" },
+			{ name: "Vows", heName: "נדרים" },
+			{ name: "Nazariteship", heName: "נזירות" },
+			{ name: "Appraisals and Devoted Property", heName: "ערכין וחרמין" },
 		],
 	},
 	{
 		name: "Sefer Zeraim",
+		heName: "ספר זרעים",
 		shortName: "Zeraim",
+		shortHeName: "זרעים",
 		topics: [
-			{ name: "Diverse Species" },
-			{ name: "Gifts to the Poor" },
-			{ name: "Heave Offerings" },
-			{ name: "Tithes" },
-			{ name: "Second Tithes and Fourth Year's Fruit" },
-			{ name: "First Fruits and other Gifts to Priests Outside the Sanctuary" },
-			{ name: "Sabbatical Year and the Jubilee" },
+			{ name: "Diverse Species", heName: "כלאים" },
+			{ name: "Gifts to the Poor", heName: "מתנות עניים" },
+			{ name: "Heave Offerings", heName: "תרומות" },
+			{ name: "Tithes", heName: "מעשרות" },
+			{ name: "Second Tithes and Fourth Year's Fruit", heName: "מעשר שני ונטע רבעי" },
+			{
+				name: "First Fruits and other Gifts to Priests Outside the Sanctuary",
+				heName: "ביכורים ושאר מתנות כהונה שבגבולין",
+			},
+			{ name: "Sabbatical Year and the Jubilee", heName: "שמיטה ויובל" },
 		],
 	},
 	{
 		name: "Sefer Avodah",
+		heName: "ספר עבודה",
 		shortName: "Avodah",
+		shortHeName: "עבודה",
 		topics: [
-			{ name: "The Chosen Temple" },
-			{ name: "Vessels of the Sanctuary and Those Who Serve Therein" },
-			{ name: "Admission into the Sanctuary" },
-			{ name: "Things Forbidden on the Altar" },
-			{ name: "Sacrificial Procedure" },
-			{ name: "Daily Offerings and Additional Offerings" },
-			{ name: "Sacrifices Rendered Unfit" },
-			{ name: "Service on the Day of Atonement" },
-			{ name: "Trespass" },
+			{ name: "The Chosen Temple", heName: "בית הבחירה" },
+			{ name: "Vessels of the Sanctuary and Those Who Serve Therein", heName: "כלי המקדש והעובדין בו" },
+			{ name: "Admission into the Sanctuary", heName: "ביאת המקדש" },
+			{ name: "Things Forbidden on the Altar", heName: "איסורי מזבח" },
+			{ name: "Sacrificial Procedure", heName: "מעשה הקרבנות" },
+			{ name: "Daily Offerings and Additional Offerings", heName: "תמידין ומוספין" },
+			{ name: "Sacrifices Rendered Unfit", heName: "פסולי המוקדשין" },
+			{ name: "Service on the Day of Atonement", heName: "עבודת יום הכיפורים" },
+			{ name: "Trespass", heName: "מעילה" },
 		],
 	},
 	{
 		name: "Sefer Korbanot",
+		heName: "ספר קרבנות",
 		shortName: "Korbanot",
+		shortHeName: "קרבנות",
 		topics: [
-			{ name: "Paschal Offering" },
-			{ name: "Festival Offering" },
-			{ name: "Firstlings" },
-			{ name: "Offerings for Unintentional Transgressions" },
-			{ name: "Offerings for Those with Incomplete Atonement" },
-			{ name: "Substitution" },
+			{ name: "Paschal Offering", heName: "קרבן פסח" },
+			{ name: "Festival Offering", heName: "חגיגה" },
+			{ name: "Firstlings", heName: "בכורות" },
+			{ name: "Offerings for Unintentional Transgressions", heName: "שגגות" },
+			{ name: "Offerings for Those with Incomplete Atonement", heName: "מחוסרי כפרה" },
+			{ name: "Substitution", heName: "תמורה" },
 		],
 	},
 	{
 		name: "Sefer Taharah",
+		heName: "ספר טהרה",
 		shortName: "Taharah",
+		shortHeName: "טהרה",
 		topics: [
-			{ name: "Defilement by a Corpse" },
-			{ name: "Red Heifer" },
-			{ name: "Defilement by Leprosy" },
-			{ name: "Those Who Defile Bed or Seat" },
-			{ name: "Other Sources of Defilement" },
-			{ name: "Defilement of Foods" },
-			{ name: "Vessels" },
-			{ name: "Immersion Pools" },
+			{ name: "Defilement by a Corpse", heName: "טומאת מת" },
+			{ name: "Red Heifer", heName: "פרה אדומה" },
+			{ name: "Defilement by Leprosy", heName: "טומאת צרעת" },
+			{ name: "Those Who Defile Bed or Seat", heName: "מטמאי משכב ומושב" },
+			{ name: "Other Sources of Defilement", heName: "שאר אבות הטומאות" },
+			{ name: "Defilement of Foods", heName: "טומאת אוכלין" },
+			{ name: "Vessels", heName: "כלים" },
+			{ name: "Immersion Pools", heName: "מקוואות" },
 		],
 	},
 	{
 		name: "Sefer Nezikim",
+		heName: "ספר נזיקין",
 		shortName: "Nezikim",
+		shortHeName: "נזיקין",
 		topics: [
-			{ name: "Damages to Property" },
-			{ name: "Theft" },
-			{ name: "Robbery and Lost Property" },
-			{ name: "One Who Injures a Person or Property" },
-			{ name: "Murderer and the Preservation of Life" },
+			{ name: "Damages to Property", heName: "נזקי ממון" },
+			{ name: "Theft", heName: "גניבה" },
+			{ name: "Robbery and Lost Property", heName: "גזילה ואבידה" },
+			{ name: "One Who Injures a Person or Property", heName: "חובל ומזיק" },
+			{ name: "Murderer and the Preservation of Life", heName: "רוצח ושמירת נפש" },
 		],
 	},
 	{
 		name: "Sefer Kinyan",
+		heName: "ספר קניין",
 		shortName: "Kinyan",
+		shortHeName: "קניין",
 		topics: [
-			{ name: "Sales" },
-			{ name: "Ownerless Property and Gifts" },
-			{ name: "Neighbors" },
-			{ name: "Agents and Partners" },
-			{ name: "Slaves" },
+			{ name: "Sales", heName: "מכירה" },
+			{ name: "Ownerless Property and Gifts", heName: "זכייה ומתנה" },
+			{ name: "Neighbors", heName: "שכנים" },
+			{ name: "Agents and Partners", heName: "שלוחין ושותפין" },
+			{ name: "Slaves", heName: "עבדים" },
 		],
 	},
 	{
 		name: "Sefer Mishpatim",
+		heName: "ספר משפטים",
 		shortName: "Mishpatim",
+		shortHeName: "משפטים",
 		topics: [
-			{ name: "Hiring" },
-			{ name: "Borrowing and Deposit" },
-			{ name: "Creditor and Debtor" },
-			{ name: "Plaintiff and Defendant" },
-			{ name: "Inheritances" },
+			{ name: "Hiring", heName: "שכירות" },
+			{ name: "Borrowing and Deposit", heName: "שאלה ופיקדון" },
+			{ name: "Creditor and Debtor", heName: "מלווה ולווה" },
+			{ name: "Plaintiff and Defendant", heName: "טוען ונטען" },
+			{ name: "Inheritances", heName: "נחלות" },
 		],
 	},
 	{
 		name: "Sefer Shoftim",
+		heName: "ספר שופטים",
 		shortName: "Shoftim",
+		shortHeName: "שופטים",
 		topics: [
-			{ name: "The Sanhedrin and the Penalties within Their Jurisdiction" },
-			{ name: "Testimony" },
-			{ name: "Rebels" },
-			{ name: "Mourning" },
-			{ name: "Kings and Wars" },
+			{
+				name: "The Sanhedrin and the Penalties within Their Jurisdiction",
+				heName: "סנהדרין והעונשין המסורין להם",
+			},
+			{ name: "Testimony", heName: "עדות" },
+			{ name: "Rebels", heName: "ממרים" },
+			{ name: "Mourning", heName: "אבל" },
+			{ name: "Kings and Wars", heName: "מלכים ומלחמות" },
 		],
 	},
 ];
 
-/** Tractates of the Babylonian Talmud (Bavli) available on Sefaria. */
+/** Tractates of the Babylonian Talmud (Bavli) available offline. */
 export const GEMARA_TRACTATES: GemaraTractate[] = [
-	{ name: "Berakhot" },
-	{ name: "Shabbat" },
-	{ name: "Eruvin" },
-	{ name: "Pesachim" },
-	{ name: "Rosh Hashanah" },
-	{ name: "Yoma" },
-	{ name: "Sukkah" },
-	{ name: "Beitzah" },
-	{ name: "Taanit" },
-	{ name: "Megillah" },
-	{ name: "Moed Katan" },
-	{ name: "Chagigah" },
-	{ name: "Yevamot" },
-	{ name: "Ketubot" },
-	{ name: "Nedarim" },
-	{ name: "Nazir" },
-	{ name: "Sotah" },
-	{ name: "Gittin" },
-	{ name: "Kiddushin" },
-	{ name: "Bava Kamma" },
-	{ name: "Bava Metzia" },
-	{ name: "Bava Batra" },
-	{ name: "Sanhedrin" },
-	{ name: "Makkot" },
-	{ name: "Shevuot" },
-	{ name: "Avodah Zarah" },
-	{ name: "Horayot" },
-	{ name: "Zevachim" },
-	{ name: "Menachot" },
-	{ name: "Chullin" },
-	{ name: "Bekhorot" },
-	{ name: "Arakhin" },
-	{ name: "Temurah" },
-	{ name: "Keritot" },
-	{ name: "Meilah" },
-	{ name: "Tamid" },
-	{ name: "Niddah" },
+	{ name: "Berakhot", heName: "ברכות" },
+	{ name: "Shabbat", heName: "שבת" },
+	{ name: "Eruvin", heName: "עירובין" },
+	{ name: "Pesachim", heName: "פסחים" },
+	{ name: "Rosh Hashanah", heName: "ראש השנה" },
+	{ name: "Yoma", heName: "יומא" },
+	{ name: "Sukkah", heName: "סוכה" },
+	{ name: "Beitzah", heName: "ביצה" },
+	{ name: "Taanit", heName: "תענית" },
+	{ name: "Megillah", heName: "מגילה" },
+	{ name: "Moed Katan", heName: "מועד קטן" },
+	{ name: "Chagigah", heName: "חגיגה" },
+	{ name: "Yevamot", heName: "יבמות" },
+	{ name: "Ketubot", heName: "כתובות" },
+	{ name: "Nedarim", heName: "נדרים" },
+	{ name: "Nazir", heName: "נזיר" },
+	{ name: "Sotah", heName: "סוטה" },
+	{ name: "Gittin", heName: "גיטין" },
+	{ name: "Kiddushin", heName: "קידושין" },
+	{ name: "Bava Kamma", heName: "בבא קמא" },
+	{ name: "Bava Metzia", heName: "בבא מציעא" },
+	{ name: "Bava Batra", heName: "בבא בתרא" },
+	{ name: "Sanhedrin", heName: "סנהדרין" },
+	{ name: "Makkot", heName: "מכות" },
+	{ name: "Shevuot", heName: "שבועות" },
+	{ name: "Avodah Zarah", heName: "עבודה זרה" },
+	{ name: "Horayot", heName: "הוריות" },
+	{ name: "Zevachim", heName: "זבחים" },
+	{ name: "Menachot", heName: "מנחות" },
+	{ name: "Chullin", heName: "חולין" },
+	{ name: "Bekhorot", heName: "בכורות" },
+	{ name: "Arakhin", heName: "ערכין" },
+	{ name: "Temurah", heName: "תמורה" },
+	{ name: "Keritot", heName: "כריתות" },
+	{ name: "Meilah", heName: "מעילה" },
+	{ name: "Tamid", heName: "תמיד" },
+	{ name: "Niddah", heName: "נדה" },
 ];
+
+export const DEFAULT_GEMARA_TRACTATE_ALIASES = [
+	"ברכות=br",
+	"שבת=sh",
+	"ראש השנה=rh",
+	"מועד קטן=mk",
+	"בבא קמא=bk",
+	"בבא מציעא=bm",
+	"בבא בתרא=bb",
+	"עבודה זרה=az",
+	"סנהדרין=sanh",
+].join("\n");
 
 export interface StudyPrefixMatch {
 	mode: StudyMode;
@@ -236,19 +289,57 @@ export interface StudyPrefixMatch {
 	remainder: string;
 }
 
-function normalizeAlias(value: string): string {
+export function normalizeStudyName(value: string): string {
 	return value
 		.trim()
 		.toLocaleLowerCase()
 		.normalize("NFD")
-		.replace(/[\u0300-\u036f]/g, "");
+		.replace(/[\u0300-\u036f]/g, "")
+		.replace(/['"׳״]/g, "")
+		.replace(/[^a-z0-9\u0590-\u05ff]+/g, " ")
+		.trim();
+}
+
+function normalizeAlias(value: string): string {
+	return normalizeStudyName(value);
 }
 
 function aliasesFromSetting(value: string): string[] {
 	return value
-		.split(/[/,;\n]+/)
+		.split(/[\/,;\n]+/)
 		.map((alias) => alias.trim())
 		.filter(Boolean);
+}
+
+export function gemaraAliasMap(value: string): Map<string, string[]> {
+	const out = new Map<string, string[]>();
+	for (const rawLine of value.split(/\n+/)) {
+		const line = rawLine.trim();
+		if (!line || line.startsWith("#")) continue;
+		const parts = line.split(/\s*[:=]\s*/, 2);
+		if (parts.length < 2) continue;
+		const tractate = resolveGemaraTractate(parts[0]);
+		if (!tractate) continue;
+		const aliases = aliasesFromSetting(parts[1]);
+		if (!aliases.length) continue;
+		out.set(tractate.name, [...new Set([...(out.get(tractate.name) ?? []), ...aliases])]);
+	}
+	return out;
+}
+
+export function resolveGemaraTractate(input: string): GemaraTractate | null {
+	const normalized = normalizeStudyName(input);
+	if (!normalized) return null;
+	for (const tractate of GEMARA_TRACTATES) {
+		if (normalizeStudyName(tractate.name) === normalized) return tractate;
+		if (normalizeStudyName(tractate.heName) === normalized) return tractate;
+	}
+	return null;
+}
+
+export function gemaraTractateNames(tractate: GemaraTractate, aliasSetting: string): string[] {
+	const custom = gemaraAliasMap(aliasSetting).get(tractate.name) ?? [];
+	return [...new Set([tractate.name, tractate.heName, ...custom])];
 }
 
 /** Match a configured leading search token, e.g. `rm` or `gm`. */
@@ -325,7 +416,7 @@ async function lookupGemara(tractate: string, daf: string): Promise<string[]> {
 	if (!match) return [];
 	const dafNumber = Number(match[1]);
 	if (dafNumber < 2) return [];
-	// Sefaria's jagged array uses one index per side: 2a=2, 2b=3, 3a=4, …
+	// The bundled jagged array uses one index per side: 2a=2, 2b=3, 3a=4, …
 	const dafIndex = dafNumber * 2 - (match[2] === "a" ? 2 : 1);
 	const pages = await loadText(GEMARA_GZ, gemaraCache, tractate, "gemara");
 	if (!Array.isArray(pages)) return [];
