@@ -97,6 +97,7 @@ Inserted Rambam citations use `רמב״ם:<section> <chapter>:<halacha>`:
 - Include nikud
 - Include te'amim
 - Insert as quote block
+- Quotation marks (used when the quote block is off)
 - Maximum search results
 - Rambam search terms
 - Gemara search terms

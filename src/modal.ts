@@ -33,6 +33,44 @@ interface StudyPassage {
 	segments: string[];
 }
 
+/**
+ * Insertion style shared by Tanakh verses and study passages.
+ *
+ *            | quote block on                              | quote block off
+ * -----------|---------------------------------------------|----------------------------------------------
+ * quoteMarks | > text (loc)                                | "text" (loc)
+ * plain      | > text                                      | text
+ *            | > — loc                                     |
+ */
+function composeInsertedText(
+	content: string,
+	location: string,
+	style: { quoteFormat: boolean; quoteMarks: boolean; inlineReference: boolean }
+): string {
+	// Reference on the same line, right after the text.
+	if (style.inlineReference) {
+		if (!style.quoteFormat) return `${content} (${location})`;
+		const lines = content.split("\n");
+		lines[lines.length - 1] += ` (${location})`;
+		return `${lines.map((line) => `> ${line}`).join("\n")}\n`;
+	}
+	// Quote marks, with the reference in parentheses after the closing mark.
+	if (style.quoteMarks && !style.quoteFormat) {
+		const quoted = content
+			.split("\n")
+			.filter((line) => line.trim())
+			.map((line) => `"${line.trim()}"`)
+			.join("\n");
+		return `${quoted} (${location})\n`;
+	}
+	// Block quote with the reference on its own line below.
+	if (style.quoteFormat) {
+		const quoted = content.split("\n").map((line) => `> ${line}`).join("\n");
+		return `${quoted}\n> — ${location}\n`;
+	}
+	return `${content}\n— ${location}\n`;
+}
+
 // Letras con tooltip (nombre + sonido). El maqaf al final.
 const ALEF_BET: Array<[string, string]> = [
 	["א", "alef (')"],
@@ -729,31 +767,7 @@ export class PasukModal extends Modal {
 	private insertStudyPassage(passage: StudyPassage, selection: string | null) {
 		const content = (selection ?? passage.segments.join("\n")).replace(/\r/g, "").trim();
 		if (!content) return;
-		let text: string;
-		if (this.settings.inlineReference) {
-			if (this.settings.quoteFormat) {
-				const lines = content.split("\n");
-				if (lines.length > 0) {
-					lines[lines.length - 1] += ` (${passage.label})`;
-				}
-				const quoted = lines.map((line) => `> ${line}`).join("\n");
-				text = `${quoted}\n`;
-			} else {
-				// Non-quoted inline
-				const lines = content.split("\n");
-				if (lines.length > 0) {
-					lines[lines.length - 1] += ` (${passage.label})`;
-				}
-				text = lines.join("\n");
-			}
-		} else {
-			if (this.settings.quoteFormat) {
-				const quoted = content.split("\n").map((line) => `> ${line}`).join("\n");
-				text = `${quoted}\n> — ${passage.label}\n`;
-			} else {
-				text = `${content}\n— ${passage.label}\n`;
-			}
-		}
+		const text = composeInsertedText(content, passage.label, this.settings);
 		this.editor.replaceSelection(text);
 		this.close();
 	}
@@ -814,26 +828,7 @@ export class PasukModal extends Modal {
 			item.wholeChapter ?? false
 		);
 
-		let text: string;
-		if (this.settings.inlineReference) {
-			if (this.settings.quoteFormat) {
-				const newLines = [...lines];
-				if (newLines.length > 0) {
-					newLines[newLines.length - 1] += ` (${source})`;
-				}
-				const quoted = newLines.map((l) => `> ${l}`).join("\n");
-				text = `${quoted}\n`;
-			} else {
-				text = `${lines.join(" ")} (${source})`;
-			}
-		} else {
-			if (this.settings.quoteFormat) {
-				const quoted = lines.map((l) => `> ${l}`).join("\n");
-				text = `${quoted}\n> — ${source}\n`;
-			} else {
-				text = `${lines.join(" ")}\n— ${source}\n`;
-			}
-		}
+		const text = composeInsertedText(lines.join(" "), source, this.settings);
 
 		this.editor.replaceSelection(text);
 		this.close();
