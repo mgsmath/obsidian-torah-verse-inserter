@@ -92,6 +92,31 @@ Clique no botão **א** para abrir um teclado hebraico dentro da janela de pesqu
 
 ---
 
+## 📁 Biblioteca de fontes (מקורות/)
+
+Cada fonte tem a sua própria nota no cofre, com pastas e nomes em hebraico e numeração com letras hebraicas:
+
+| Fonte | Unidade | Caminho |
+|---|---|---|
+| Tanakh (תנ״ך) | 1 versículo por arquivo | `מקורות/תנך/[livro]/פרק [letra]/[letra].md` |
+| Guemará (גמרא) | 1 amud por arquivo | `מקורות/גמרא/[tratado]/פרק [letra]/[daf amud].md` |
+| Rambam (רמב״ם) | 1 halachá por arquivo | `מקורות/רמבם/[seção]/פרק [letra]/[letra].md` |
+
+```text
+מקורות/תנך/בראשית/פרק א/א.md
+מקורות/גמרא/ברכות/פרק א/ב עא.md   ← daf 2 amud א
+מקורות/רמבם/קריאת שמע/פרק א/א.md  ← sem o prefixo "הלכות"
+```
+
+Cada nota traz o texto, propriedades YAML (coleção, livro/tratado/seção, capítulo, versículo/daf/halachá, a citação em hebraico e a referência Sefaria) e links para a fonte anterior, a seguinte e a primeira do seu capítulo. A referência inserida é um **wikilink** para esse arquivo:
+
+```md
+> וַתֹּאמֶר הָאִשָּׁה...
+> — [[מקורות/תנך/בראשית/פרק כ/ד|בְּרֵאשִׁית כ:ד]]
+```
+
+`mekorot-library.zip` (anexado a cada versão, ou gerado com `npm run build-library`) contém toda a biblioteca: 23.206 versículos, 5.349 amudim e 15.210 halachot. Extraia-o na raiz do cofre. O plugin também cria os arquivos que faltam na hora de inserir e **nunca sobrescreve** os que já existem.
+
 ## 🕮 Fontes do texto
 
 - **Texto hebraico:** [Miqra segundo a Massorá (MAM)](https://en.wikipedia.org/wiki/Miqra_according_to_the_Masorah) — uma edição digital meticulosa do Tanakh baseada no Códice de Alepo, com versão fixada via Sefaria. Em casos de ketiv/qere, o plugin insere o **qere** (a forma lida), totalmente vocalizado.

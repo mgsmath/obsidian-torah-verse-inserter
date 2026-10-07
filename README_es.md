@@ -92,6 +92,31 @@ Haz clic en el botón **א** para abrir un teclado hebreo dentro de la ventana d
 
 ---
 
+## 📁 Biblioteca de fuentes (מקורות/)
+
+Cada fuente vive en su propia nota del vault, con carpetas y nombres en hebreo y numeración con letras hebreas:
+
+| Fuente | Unidad | Ruta |
+|---|---|---|
+| Tanaj (תנ״ך) | 1 versículo por archivo | `מקורות/תנך/[libro]/פרק [letra]/[letra].md` |
+| Guemará (גמרא) | 1 amud por archivo | `מקורות/גמרא/[tratado]/פרק [letra]/[daf amud].md` |
+| Rambam (רמב״ם) | 1 halajá por archivo | `מקורות/רמבם/[sección]/פרק [letra]/[letra].md` |
+
+```text
+מקורות/תנך/בראשית/פרק א/א.md
+מקורות/גמרא/ברכות/פרק א/ב עא.md   ← daf 2 amud א
+מקורות/רמבם/קריאת שמע/פרק א/א.md  ← sin el prefijo "הלכות"
+```
+
+Cada nota lleva el texto, propiedades YAML (colección, libro/tratado/sección, capítulo, versículo/daf/halajá, la cita en hebreo y la referencia de Sefaria) y enlaces al archivo anterior, al siguiente y al primero de su capítulo. La referencia insertada es un **wikienlace** a ese archivo:
+
+```md
+> וַתֹּאמֶר הָאִשָּׁה...
+> — [[מקורות/תנך/בראשית/פרק כ/ד|בְּרֵאשִׁית כ:ד]]
+```
+
+`mekorot-library.zip` (adjunto a cada versión, o con `npm run build-library`) contiene toda la biblioteca: 23 206 versículos, 5349 amudim y 15 210 halajot. Extráelo en la raíz del vault. El complemento también crea los archivos que falten al insertar, y **nunca sobrescribe** los que ya existen.
+
 ## 🕮 Fuentes del texto
 
 - **Texto hebreo:** [Miqra al pi haMasorá (MAM)](https://en.wikipedia.org/wiki/Miqra_according_to_the_Masorah) — una edición digital meticulosa del Tanaj basada en el Códice de Alepo, con versión fijada vía Sefaria. En los casos de ketiv/qeré, el plugin inserta el **qeré** (la forma que se lee), totalmente vocalizado.

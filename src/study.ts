@@ -380,7 +380,8 @@ export function matchStudyPrefix(
 const rambamCache = new Map<string, unknown>();
 const gemaraCache = new Map<string, unknown>();
 
-function collectText(value: unknown, out: string[]): void {
+/** Flatten a nested corpus node into the non-empty strings it holds. */
+export function collectText(value: unknown, out: string[]): void {
 	if (typeof value === "string") {
 		// The corpus builder strips source markup and normalizes whitespace before bundling.
 		const text = value.trim();
@@ -392,6 +393,16 @@ function collectText(value: unknown, out: string[]): void {
 	}
 }
 
+/** Gunzip one bundled corpus entry (base64 of gzip of JSON). */
+export async function decodeBundledText(encoded: string): Promise<unknown> {
+	const binary = atob(encoded);
+	const bytes = new Uint8Array(binary.length);
+	for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+	const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
+	const json = await new Response(stream).text();
+	return JSON.parse(json) as unknown;
+}
+
 async function loadText(
 	corpus: Record<string, string>,
 	cache: Map<string, unknown>,
@@ -401,12 +412,7 @@ async function loadText(
 	if (cache.has(key)) return cache.get(key);
 	const encoded = corpus[key];
 	if (!encoded) throw new Error(`No bundled ${mode} text for “${key}”`);
-	const binary = atob(encoded);
-	const bytes = new Uint8Array(binary.length);
-	for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-	const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("gzip"));
-	const json = await new Response(stream).text();
-	const text: unknown = JSON.parse(json);
+	const text = await decodeBundledText(encoded);
 	cache.set(key, text);
 	return text;
 }
