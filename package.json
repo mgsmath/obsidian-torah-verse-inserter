@@ -9,7 +9,7 @@
 		"build-corpus": "node tools/build-corpus.mjs",
 		"fetch-study-corpus": "node tools/fetch-study-corpus.mjs",
 		"build-study-corpus": "node tools/build-study-corpus.mjs",
-		"test": "node tools/test-study-corpus.mjs",
+		"test": "node tools/test-compose.mjs && node tools/test-study-corpus.mjs",
 		"lint": "eslint src/"
 	},
 	"keywords": ["obsidian", "tanakh", "torah", "hebrew", "pasuk", "bible", "rambam", "talmud", "gemara"],

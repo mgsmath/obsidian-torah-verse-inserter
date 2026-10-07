@@ -22,6 +22,44 @@ export function consonantal(s: string): string {
 }
 
 /**
+ * Aislantes bidireccionales: RIGHT-TO-LEFT ISOLATE / POP DIRECTIONAL ISOLATE.
+ * Envuelven una frase hebrea para que los neutros de sus bordes (comillas,
+ * paréntesis, guiones) se queden del lado hebreo aunque la línea sea inglesa.
+ */
+export const RLI = "\u2067";
+export const PDI = "\u2069";
+
+/**
+ * True cuando el texto contiene caracteres fuertemente RTL: hebreo
+ * (0590-05FF), árabe y afines (0600-08FF) o formas de presentación
+ * (FB1D-FDFF, FE70-FEFC). Se compara por punto de código para no depender
+ * de escapes Unicode en la expresión regular.
+ */
+export function containsRtl(text: string): boolean {
+	for (const ch of text) {
+		const cp = ch.codePointAt(0) ?? 0;
+		if (cp >= 0x0590 && cp <= 0x08ff) return true;
+		if (cp >= 0xfb1d && cp <= 0xfdff) return true;
+		if (cp >= 0xfe70 && cp <= 0xfefc) return true;
+	}
+	return false;
+}
+
+/**
+ * Envuelve `text` en un aislante RTL (RLI…PDI) para que los caracteres
+ * neutros de sus bordes (" comillas, paréntesis, raya —) se dibujen del lado
+ * correcto del hebreo al insertarlo en una línea inglesa (LTR). Sin el
+ * aislante, el algoritmo bidi de Unicode pega esos neutros al inglés
+ * circundante y la comilla de apertura salta visualmente al extremo
+ * equivocado del hebreo. El texto sin RTL se devuelve sin cambios.
+ */
+export function isolateIfRtl(text: string): string {
+	if (!containsRtl(text)) return text;
+	if (text.startsWith(RLI) && text.endsWith(PDI)) return text;
+	return `${RLI}${text}${PDI}`;
+}
+
+/**
  * Compatibilidad de fuentes: MAM usa signos que muchas fuentes no incluyen.
  * Se sustituyen por equivalentes visualmente idénticos:
  *   U+05C7 kamatz katán  -> U+05B8 kamatz

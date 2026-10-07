@@ -5,6 +5,7 @@ import { formatBookReferenceInHebrew, formatRefLabel, parseRef } from "./refpars
 import { getVerses } from "./corpus";
 import { searchText, SearchHit } from "./search";
 import { formatHebrew, formatHebrewDafShort, formatHebrewLocation } from "./hebrew";
+import { composeInsertedText, flowIntoSingleLine } from "./compose";
 import { currentLang, t } from "./i18n";
 import {
 	lookupStudyHebrew,
@@ -31,59 +32,6 @@ interface StudyPassage {
 	ref: string;
 	label: string;
 	segments: string[];
-}
-
-/**
- * Insertion style shared by Tanakh verses and study passages. `quoteMarks`
- * wraps the text in "quotes" in every format; without a quote block it also
- * keeps the reference in parentheses right after the text.
- *
- *              | quote block on                  | quote block off
- * ------------ | ------------------------------- | -------------------------------
- * inline ref   | > "text" (loc)                  | "text" (loc)
- * own-line ref | > "text"                        | text
- *              | > — loc                         | — loc
- *
- * (Quotes are omitted in every layout when quoteMarks is off.)
- */
-function composeInsertedText(
-	content: string,
-	location: string,
-	style: { quoteFormat: boolean; quoteMarks: boolean; inlineReference: boolean }
-): string {
-	// One pair of quotation marks around the text, whatever the format.
-	const text = style.quoteMarks ? `"${content}"` : content;
-	// Reference on the same line, right after the text.
-	if (style.inlineReference) {
-		if (!style.quoteFormat) return `${text} (${location})`;
-		const lines = text.split("\n");
-		lines[lines.length - 1] += ` (${location})`;
-		return `${lines.map((line) => `> ${line}`).join("\n")}\n`;
-	}
-	// Quote marks without a quote block: reference in parentheses after the
-	// closing mark.
-	if (style.quoteMarks && !style.quoteFormat) {
-		return `${text} (${location})\n`;
-	}
-	// Block quote with the reference on its own line below.
-	if (style.quoteFormat) {
-		return `${text.split("\n").map((line) => `> ${line}`).join("\n")}\n> — ${location}\n`;
-	}
-	return `${text}\n— ${location}\n`;
-}
-
-/**
- * Collapse a study passage (or a preview selection) into one flowing line:
- * Gemara/Rambam segments are inserted as a single paragraph, not one line
- * per segment.
- */
-function flowIntoSingleLine(raw: string): string {
-	return raw
-		.replace(/\r/g, "")
-		.split("\n")
-		.map((line) => line.trim())
-		.filter(Boolean)
-		.join(" ");
 }
 
 // Letras con tooltip (nombre + sonido). El maqaf al final.

@@ -109,6 +109,7 @@ Inserted Rambam citations use `רמב״ם:<section> <chapter>:<halacha>`:
 
 ## Notes
 
+- Inserted Hebrew is wrapped in invisible Unicode directional isolates (RLI…PDI), so quotation marks and parentheses stay on the correct side of the Hebrew when inserted into an English line.
 - Tanakh, Rambam, and Gemara text lookup works offline.
 - Rambam and Gemara insertion no longer appends Sefaria or Wikisource links.
 - Hebrew references are used in inserted citations.
