@@ -108,7 +108,7 @@ Chaque source a sa propre note dans le coffre, avec des dossiers et des noms en 
 מקורות/רמבם/קריאת שמע/פרק א/א.md  ← sans le préfixe « הלכות »
 ```
 
-Chaque note contient le texte, des propriétés YAML (collection, livre/traité/section, chapitre, verset/daf/halakha, la citation en hébreu et la référence Sefaria) ainsi que des liens vers la source précédente, la suivante et la première du chapitre. La référence insérée est un **wikilien** vers ce fichier :
+Chaque note contient uniquement un titre en hébreu indiquant l’emplacement et le texte de la source, suivis de liens vers la source précédente, la suivante et la première du chapitre. La référence insérée est un **wikilien** vers ce fichier :
 
 ```md
 > וַתֹּאמֶר הָאִשָּׁה...

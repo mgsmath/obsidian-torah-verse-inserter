@@ -826,8 +826,13 @@ export class PasukModal extends Modal {
 		// Re-read the note after the insertion so the definition lands after
 		// everything, including the text just inserted.
 		const value = this.editor.getValue();
-		const end = this.editor.offsetToPos(value.length);
-		this.editor.replaceRange(footnoteDefinitionAppendix(value, footnoteDefinition), end, end);
+		const appendix = footnoteDefinitionAppendix(value, footnoteDefinition);
+		// Use the final line/character position directly rather than converting
+		// the document length to a position. This ensures Obsidian gets the
+		// definition as a standalone paragraph at the true end of the note.
+		const lastLine = this.editor.lastLine();
+		const end = { line: lastLine, ch: this.editor.getLine(lastLine).length };
+		this.editor.replaceRange(appendix, end);
 	}
 
 	private render() {

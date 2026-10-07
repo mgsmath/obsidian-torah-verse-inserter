@@ -116,7 +116,7 @@ try {
 	assert.equal(link, `[[מקורות/תנך/בראשית/פרק א/א|${RLI}בראשית א:א${PDI}]]`);
 	assert.ok(link.startsWith("[["), "the link must open with clean brackets");
 
-	// 7. A source note carries its frontmatter, heading, text and navigation.
+	// 7. A source note contains only its location heading, text and navigation.
 	const note = mekorot.sourceNoteContent(
 		bereshit,
 		"בְּרֵאשִׁית בָּרָא",
@@ -125,24 +125,22 @@ try {
 			up: { path: "מקורות/תנך/בראשית/פרק א/א", label: "פרק א" },
 		}
 	);
-	assert.ok(note.startsWith("---\n"), "note must open with frontmatter");
+	assert.ok(note.startsWith("# בראשית פרק א, פסוק א\n"), "note must begin with its location heading");
+	assert.ok(!note.startsWith("---\n"), "note must not have frontmatter");
 	for (const field of ["סוג:", "מקור:", "ספר:", "פרק:", "פסוק:", "הפניה:", "sefaria:"]) {
-		assert.ok(note.includes(field), `frontmatter must have ${field}`);
+		assert.ok(!note.includes(field), `note must not include metadata field ${field}`);
 	}
-	assert.ok(note.includes('sefaria: "Genesis.1.1"'));
-	assert.ok(note.includes("# בראשית פרק א, פסוק א"));
 	assert.ok(note.includes("בְּרֵאשִׁית בָּרָא"));
 	assert.ok(note.includes("[[מקורות/תנך/בראשית/פרק א/ב|הבא — בראשית א:ב]]"));
-	// A Rambam note records the Sefer and the section without a הלכות prefix.
+	assert.ok(note.includes("[[מקורות/תנך/בראשית/פרק א/א|פרק א]]"));
+	// Rambam and Gemara notes also retain just the location, text and navigation.
 	const rambamNote = mekorot.sourceNoteContent(shema, "טקסט");
-	assert.ok(rambamNote.includes('נושא: "קריאת שמע"'));
-	assert.ok(rambamNote.includes('ספר: "ספר אהבה"'));
+	assert.ok(rambamNote.startsWith("# רמב״ם קריאת שמע פרק א, הלכה א\n"));
+	assert.ok(!rambamNote.includes("ספר אהבה") && !rambamNote.includes("נושא:"));
 	assert.ok(!rambamNote.includes("הלכות קריאת שמע"));
-	// A Gemara note records daf and amud separately.
 	const gemaraNote = mekorot.sourceNoteContent(berakhot, "מתני׳");
-	assert.ok(gemaraNote.includes('דף: "ב"'));
-	assert.ok(gemaraNote.includes('עמוד: "א"'));
-	assert.ok(gemaraNote.includes('sefaria: "Berakhot.2a"'));
+	assert.ok(gemaraNote.startsWith("# ברכות פרק א, דף ב עא\n"));
+	assert.ok(!gemaraNote.includes("sefaria:"));
 
 	// 8. The composed insertion points the reference at the source note in every
 	// layout, and stays plain text when no link is given.
@@ -204,7 +202,8 @@ try {
 		assert.ok(file.path.endsWith(".md"), file.path);
 		assert.ok(!seen.has(file.path), `duplicate path ${file.path}`);
 		seen.add(file.path);
-		assert.ok(file.content.startsWith("---\n"), file.path);
+		assert.ok(file.content.startsWith("# "), `note must begin with a location heading: ${file.path}`);
+		assert.ok(!file.content.includes("sefaria:"), `note must not contain Sefaria metadata: ${file.path}`);
 	}
 
 	assert.ok(seen.has("מקורות/תנך/בראשית/פרק א/א.md"));

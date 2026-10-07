@@ -108,7 +108,7 @@ Cada fonte tem a sua própria nota no cofre, com pastas e nomes em hebraico e nu
 מקורות/רמבם/קריאת שמע/פרק א/א.md  ← sem o prefixo "הלכות"
 ```
 
-Cada nota traz o texto, propriedades YAML (coleção, livro/tratado/seção, capítulo, versículo/daf/halachá, a citação em hebraico e a referência Sefaria) e links para a fonte anterior, a seguinte e a primeira do seu capítulo. A referência inserida é um **wikilink** para esse arquivo:
+Cada nota contém apenas um título em hebraico com a localização e o texto da fonte, seguido de links para a fonte anterior, a seguinte e a primeira do seu capítulo. A referência inserida é um **wikilink** para esse arquivo:
 
 ```md
 > וַתֹּאמֶר הָאִשָּׁה...
