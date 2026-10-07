@@ -164,7 +164,9 @@ export function sourceFilePath(source: Source, root: string = DEFAULT_SOURCES_FO
  * the link brackets belong and the citation is inserted as plain text.
  */
 export function sourceLink(source: Source, label: string, root: string = DEFAULT_SOURCES_FOLDER): string {
-	const path = sourcePath(source, root);
+	// Normalised for the same reason `ensureSourceNote` normalises it: a messy
+	// folder setting must not produce a link that misses the file on disk.
+	const path = sourcePath(source, normalizeFolder(root));
 	return `[[${path}|${isolateIfRtl(label)}]]`;
 }
 

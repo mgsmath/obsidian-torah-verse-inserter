@@ -246,6 +246,19 @@ try {
 	// A custom folder is honoured, and a messy one is cleaned up.
 	assert.equal(mekorot.normalizeFolder("  /מקורות//חדש/  "), "מקורות/חדש");
 	assert.equal(mekorot.normalizeFolder("   "), "מקורות");
+	assert.equal(mekorot.normalizeFolder("מקורות//חדש/"), "מקורות/חדש");
+	// The link and the note written for the same setting must agree.
+	const messy = new Map();
+	await mekorot.ensureSourceNotes(
+		{ exists: (p) => messy.has(p), mkdir: async () => {}, create: async (p, c) => void messy.set(p, c) },
+		prepared,
+		"  /מקורות//חדש/ "
+	);
+	assert.deepEqual([...messy.keys()], [
+		"מקורות/חדש/תנך/בראשית/פרק א/א.md",
+		"מקורות/חדש/תנך/בראשית/פרק א/ב.md",
+	]);
+	assert.ok(messy.has(mekorot.sourceLink(bereshit, "בראשית", "  /מקורות//חדש/ ").slice(2).split("|")[0] + ".md"));
 	const custom = new Map();
 	await mekorot.ensureSourceNotes(
 		{ exists: (p) => custom.has(p), mkdir: async () => {}, create: async (p, c) => void custom.set(p, c) },

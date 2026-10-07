@@ -13,10 +13,10 @@ import {
 } from "./compose";
 import { currentLang, t } from "./i18n";
 import {
-	DEFAULT_SOURCES_FOLDER,
 	GemaraSource,
 	RambamSource,
 	ensureSourceNotes,
+	normalizeFolder,
 	perekForDaf,
 	sourceLink,
 } from "./mekorot";
@@ -797,7 +797,9 @@ export class PasukModal extends Modal {
 	 */
 	private async sourceLinkFor(location: string, sources: PreparedSource[]): Promise<string | undefined> {
 		if (!this.settings.linkSourceFiles || !sources.length) return undefined;
-		const root = this.settings.sourcesFolder.trim() || DEFAULT_SOURCES_FOLDER;
+		// The same normalisation the writer applies, so the link can never point
+		// somewhere other than the note that was just created.
+		const root = normalizeFolder(this.settings.sourcesFolder);
 		try {
 			if (this.settings.createMissingSources) {
 				await ensureSourceNotes(vaultWriter(this.app), sources, root);
