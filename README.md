@@ -54,19 +54,9 @@ Examples:
 מקורות/רמבם/קריאת שמע/פרק א/א.md      ← no "הלכות" prefix in the folder
 ```
 
-Each note holds the text plus YAML frontmatter (collection, book/tractate/section, perek, verse/daf/halacha, the Hebrew citation and the matching Sefaria reference) and links to the previous and next source, and to the first source of its perek:
+Each note contains only its Hebrew location heading and source text, followed by links to the previous and next source and to the first source of its perek:
 
 ```md
----
-סוג: "מקור"
-מקור: "תנ״ך"
-ספר: "בראשית"
-פרק: "א"
-פסוק: "א"
-הפניה: "בְּרֵאשִׁית א:א"
-sefaria: "Genesis.1.1"
----
-
 # בראשית פרק א, פסוק א
 
 בְּרֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים...

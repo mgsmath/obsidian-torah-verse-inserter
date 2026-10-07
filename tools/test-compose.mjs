@@ -128,6 +128,12 @@ try {
 		`> ${RLI}${content}${PDI}\n> ${RLI}${content}${PDI}[^3]\n`
 	);
 	assert.equal(numbered.footnoteDefinition, `[^3]: ${RLI}${location}${PDI}`);
+	const numberedDocument = numbered.text + compose.footnoteDefinitionAppendix(
+		numbered.text,
+		numbered.footnoteDefinition
+	);
+	assert.ok(numberedDocument.includes("[^3]\n\n[^3]: "), "numbered marker must have a definition at note end");
+	assert.ok(numberedDocument.endsWith(`${numbered.footnoteDefinition}\n`));
 
 	// 11. Footnote ids never collide with the ones already in the note.
 	assert.equal(compose.nextFootnoteId(""), "1");

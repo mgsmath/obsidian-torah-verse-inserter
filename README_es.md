@@ -108,7 +108,7 @@ Cada fuente vive en su propia nota del vault, con carpetas y nombres en hebreo y
 מקורות/רמבם/קריאת שמע/פרק א/א.md  ← sin el prefijo "הלכות"
 ```
 
-Cada nota lleva el texto, propiedades YAML (colección, libro/tratado/sección, capítulo, versículo/daf/halajá, la cita en hebreo y la referencia de Sefaria) y enlaces al archivo anterior, al siguiente y al primero de su capítulo. La referencia insertada es un **wikienlace** a ese archivo:
+Cada nota contiene únicamente un encabezado en hebreo con la ubicación y el texto de la fuente, seguido de enlaces al archivo anterior, al siguiente y al primero de su capítulo. La referencia insertada es un **wikienlace** a ese archivo:
 
 ```md
 > וַתֹּאמֶר הָאִשָּׁה...

@@ -6,7 +6,6 @@
 // to that note. Everything in this file is pure — no Obsidian imports — so the
 // same builders generate the vault library (tools/build-library.mjs), the note
 // links (modal.ts) and the on-demand files (mekorot-vault.ts).
-import { sefariaRef } from "./books";
 import { consonantal, isolateIfRtl, toHebrewNumber } from "./hebrew";
 import { GEMARA_PERAKIM } from "./gemara-perakim";
 
@@ -27,7 +26,7 @@ export type SourceKind = keyof typeof SOURCE_FOLDERS;
 
 export interface TanakhSource {
 	kind: "tanakh";
-	/** Corpus key, also used to build the Sefaria reference. */
+	/** Corpus key for the book. */
 	bookKey: string;
 	/** Hebrew book name as it is cited (may carry nikud). */
 	bookHe: string;
@@ -179,17 +178,6 @@ export function linkTo(target: SourceNavTarget): string {
 // Note content
 // ---------------------------------------------------------------------------
 
-function yamlValue(value: string | number): string {
-	return JSON.stringify(String(value));
-}
-
-function frontmatter(fields: Array<[string, string | number | undefined]>): string {
-	const rows = fields
-		.filter((field): field is [string, string | number] => field[1] !== undefined && field[1] !== "")
-		.map(([key, value]) => `${key}: ${yamlValue(value)}`);
-	return `---\n${rows.join("\n")}\n---\n`;
-}
-
 /** The citation this source is known by, in Hebrew — also the link label. */
 export function sourceLabel(source: Source): string {
 	switch (source.kind) {
@@ -199,18 +187,6 @@ export function sourceLabel(source: Source): string {
 			return `${source.tractateHe} ${toHebrewNumber(source.daf)}${source.amud === "a" ? "." : ":"}`;
 		case "rambam":
 			return `רמב״ם:${source.topicHe} ${toHebrewNumber(source.chapter)}:${toHebrewNumber(source.halacha)}`;
-	}
-}
-
-/** Sefaria reference, kept in the frontmatter so the note stays traceable. */
-export function sourceSefariaRef(source: Source): string {
-	switch (source.kind) {
-		case "tanakh":
-			return `${sefariaRef({ key: source.bookKey })}.${source.chapter}.${source.verse}`;
-		case "gemara":
-			return `${source.tractateName}.${source.daf}${source.amud}`;
-		case "rambam":
-			return `Mishneh Torah, ${source.topicName}.${source.chapter}.${source.halacha}`;
 	}
 }
 
@@ -235,44 +211,13 @@ function navFooter(nav: SourceNav): string {
 }
 
 /**
- * Full contents of one source note: frontmatter, a Hebrew heading, the text
- * itself and the prev/next navigation. `text` may span several lines; Gemara
- * and Rambam keep one line per segment so the note stays readable.
+ * Full contents of one source note: a Hebrew location heading, the text itself
+ * and the prev/next navigation. `text` may span several lines; Gemara and
+ * Rambam keep one line per segment so the note stays readable.
  */
 export function sourceNoteContent(source: Source, text: string, nav: SourceNav = {}): string {
-	const fields: Array<[string, string | number | undefined]> = [["סוג", "מקור"]];
-	switch (source.kind) {
-		case "tanakh":
-			fields.push(
-				["מקור", "תנ״ך"],
-				["ספר", bookFolderName(source.bookHe)],
-				["פרק", toHebrewNumber(source.chapter)],
-				["פסוק", toHebrewNumber(source.verse)]
-			);
-			break;
-		case "gemara":
-			fields.push(
-				["מקור", "גמרא"],
-				["מסכת", source.tractateHe],
-				["פרק", toHebrewNumber(source.perek)],
-				["דף", toHebrewNumber(source.daf)],
-				["עמוד", source.amud === "a" ? "א" : "ב"]
-			);
-			break;
-		case "rambam":
-			fields.push(
-				["מקור", "רמב״ם"],
-				["ספר", source.bookHe],
-				["נושא", source.topicHe],
-				["פרק", toHebrewNumber(source.chapter)],
-				["הלכה", toHebrewNumber(source.halacha)]
-			);
-			break;
-	}
-	fields.push(["הפניה", sourceLabel(source)], ["sefaria", sourceSefariaRef(source)]);
-
 	const footer = navFooter(nav);
-	return `${frontmatter(fields)}\n# ${headingFor(source)}\n\n${text.trim()}\n${footer ? `\n${footer}` : ""}`;
+	return `# ${headingFor(source)}\n\n${text.trim()}\n${footer ? `\n${footer}` : ""}`;
 }
 
 // ---------------------------------------------------------------------------
