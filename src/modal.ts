@@ -5,7 +5,12 @@ import { formatBookReferenceInHebrew, formatRefLabel, parseRef } from "./refpars
 import { getVerses } from "./corpus";
 import { searchText, SearchHit } from "./search";
 import { formatHebrew, formatHebrewDafShort, formatHebrewLocation } from "./hebrew";
-import { composeInsertedText, flowIntoSingleLine } from "./compose";
+import {
+	composeInsert,
+	flowIntoSingleLine,
+	footnoteDefinitionAppendix,
+	nextFootnoteId,
+} from "./compose";
 import { currentLang, t } from "./i18n";
 import {
 	lookupStudyHebrew,
@@ -731,9 +736,28 @@ export class PasukModal extends Modal {
 		// One flowing paragraph, both for the full passage and for a selection.
 		const content = flowIntoSingleLine(selection ?? passage.segments.join("\n"));
 		if (!content) return;
-		const text = composeInsertedText(content, passage.label, this.settings);
-		this.editor.replaceSelection(text);
+		this.insertComposed(content, passage.label);
 		this.close();
+	}
+
+	/**
+	 * Insert the composed text at the cursor and, when the reference goes into
+	 * a numbered footnote, append its definition at the end of the note.
+	 */
+	private insertComposed(content: string, location: string) {
+		const needsFootnoteId =
+			this.settings.footnoteReference && this.settings.footnoteStyle === "numbered";
+		const footnoteId = needsFootnoteId ? nextFootnoteId(this.editor.getValue()) : undefined;
+		const { text, footnoteDefinition } = composeInsert(content, location, this.settings, {
+			footnoteId,
+		});
+		this.editor.replaceSelection(text);
+		if (!footnoteDefinition) return;
+		// Re-read the note after the insertion so the definition lands after
+		// everything, including the text just inserted.
+		const value = this.editor.getValue();
+		const end = this.editor.offsetToPos(value.length);
+		this.editor.replaceRange(footnoteDefinitionAppendix(value, footnoteDefinition), end, end);
 	}
 
 	private render() {
@@ -792,9 +816,7 @@ export class PasukModal extends Modal {
 			item.wholeChapter ?? false
 		);
 
-		const text = composeInsertedText(lines.join(" "), source, this.settings);
-
-		this.editor.replaceSelection(text);
+		this.insertComposed(lines.join(" "), source);
 		this.close();
 	}
 }
