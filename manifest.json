@@ -1,9 +1,9 @@
 {
 	"id": "torah-verse-inserter",
 	"name": "Shiur Notes Inserter",
-	"version": "0.4.2",
+	"version": "0.5.0",
 	"minAppVersion": "1.8.7",
-	"description": "Insert bundled offline Tanakh, Rambam, and Gemara passages in Obsidian with Hebrew references and selectable study text.",
+	"description": "Insert bundled offline Tanakh, Rambam, and Gemara passages in Obsidian with Hebrew references, and keep every source in its own note under a Hebrew מקורות library.",
 	"author": "mgsmath",
 	"authorUrl": "https://github.com/mgsmath",
 	"isDesktopOnly": false

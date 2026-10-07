@@ -66,7 +66,7 @@ const SEFARIA_REF_OVERRIDES: Record<string, string> = {
 	IIChronicles: "II_Chronicles",
 };
 
-export function sefariaRef(book: BookInfo): string {
+export function sefariaRef(book: Pick<BookInfo, "key">): string {
 	return SEFARIA_REF_OVERRIDES[book.key] ?? book.key;
 }
 

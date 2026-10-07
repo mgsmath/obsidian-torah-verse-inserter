@@ -1,5 +1,5 @@
 // Modal de búsqueda e inserción de pesukim y textos de estudio.
-import { App, Editor, Modal } from "obsidian";
+import { App, Editor, Modal, Notice } from "obsidian";
 import { BookInfo } from "./books";
 import { formatBookReferenceInHebrew, formatRefLabel, parseRef } from "./refparse";
 import { getVerses } from "./corpus";
@@ -12,6 +12,16 @@ import {
 	nextFootnoteId,
 } from "./compose";
 import { currentLang, t } from "./i18n";
+import {
+	DEFAULT_SOURCES_FOLDER,
+	GemaraSource,
+	RambamSource,
+	ensureSourceNotes,
+	perekForDaf,
+	sourceLink,
+} from "./mekorot";
+import type { PreparedSource, Source } from "./mekorot";
+import { vaultWriter } from "./mekorot-vault";
 import {
 	lookupStudyHebrew,
 	GEMARA_TRACTATES,
@@ -37,7 +47,17 @@ interface StudyPassage {
 	ref: string;
 	label: string;
 	segments: string[];
+	/** Same passage before the nikud/te'amim settings were applied. */
+	raw: string[];
+	/** The source note this passage comes from. */
+	source: Source;
 }
+
+/**
+ * The source notes keep the text exactly as the corpus has it, whatever the
+ * user chose to insert into the note: the library is the canonical copy.
+ */
+const FULL_TEXT = { nikud: true, teamim: true, fontCompat: true };
 
 // Letras con tooltip (nombre + sonido). El maqaf al final.
 const ALEF_BET: Array<[string, string]> = [
@@ -316,7 +336,7 @@ export class PasukModal extends Modal {
 	private insertStudySelectionOrFull() {
 		const passage = this.studyPassage;
 		if (!passage) return;
-		this.insertStudyPassage(passage, this.selectedStudyText.trim() ? this.selectedStudyText : null);
+		void this.insertStudyPassage(passage, this.selectedStudyText.trim() ? this.selectedStudyText : null);
 	}
 
 	/** Inserta una letra del teclado en la posición del cursor del input. */
@@ -485,7 +505,17 @@ export class PasukModal extends Modal {
 			} else {
 				label = `${tractateInfo?.heName ?? tractate} ${heDaf}`;
 			}
-			void this.fetchStudyPassage(ref, label, "gemara");
+			const dafNumber = Number(daf.slice(0, -1));
+			const amud = daf.endsWith("b") ? "b" : "a";
+			const source: GemaraSource = {
+				kind: "gemara",
+				tractateName: tractate,
+				tractateHe: tractateInfo?.heName ?? tractate,
+				perek: perekForDaf(tractate, dafNumber, amud),
+				daf: dafNumber,
+				amud,
+			};
+			void this.fetchStudyPassage(ref, label, "gemara", source);
 		};
 		this.submitStudySearch = submit;
 		form.addEventListener("submit", (evt) => {
@@ -585,7 +615,15 @@ export class PasukModal extends Modal {
 			// from same-named Gemara tractates (e.g. ברכות).
 			const heLocation = formatHebrewLocation(Number(chapter), Number(halacha));
 			const label = `רמב״ם:${topic.heName} ${heLocation}`;
-			void this.fetchStudyPassage(ref, label, "rambam");
+			const source: RambamSource = {
+				kind: "rambam",
+				topicName: topic.name,
+				topicHe: topic.heName,
+				bookHe: book.heName,
+				chapter: Number(chapter),
+				halacha: Number(halacha),
+			};
+			void this.fetchStudyPassage(ref, label, "rambam", source);
 		};
 		this.submitStudySearch = submit;
 		form.addEventListener("submit", (evt) => {
@@ -597,7 +635,7 @@ export class PasukModal extends Modal {
 		});
 	}
 
-	private async fetchStudyPassage(ref: string, label: string, mode: StudyMode) {
+	private async fetchStudyPassage(ref: string, label: string, mode: StudyMode, source: Source) {
 		const requestSeq = ++this.studyRequestSeq;
 		const queryAtStart = this.inputEl.value;
 		this.submitStudySearch = null;
@@ -626,7 +664,7 @@ export class PasukModal extends Modal {
 				this.renderStudyMessage(t("noTextFound"));
 				return;
 			}
-			this.studyPassage = { ref, label, segments };
+			this.studyPassage = { ref, label, segments, raw: rawSegments, source };
 			this.renderStudyPreview(this.studyPassage);
 		} catch {
 			if (
@@ -732,11 +770,19 @@ export class PasukModal extends Modal {
 		this.renderStudyForm(this.activeStudyMode, this.studyRemainder);
 	}
 
-	private insertStudyPassage(passage: StudyPassage, selection: string | null) {
+	private async insertStudyPassage(passage: StudyPassage, selection: string | null) {
 		// One flowing paragraph, both for the full passage and for a selection.
 		const content = flowIntoSingleLine(selection ?? passage.segments.join("\n"));
 		if (!content) return;
-		this.insertComposed(content, passage.label);
+		// The source note always holds the whole amud or halacha, even when the
+		// user only inserted part of it.
+		const prepared: PreparedSource[] = [
+			{
+				source: passage.source,
+				text: passage.raw.map((segment) => formatHebrew(segment, FULL_TEXT)).filter(Boolean).join("\n"),
+			},
+		];
+		await this.insertComposed(content, passage.label, prepared);
 		this.close();
 	}
 
@@ -744,12 +790,34 @@ export class PasukModal extends Modal {
 	 * Insert the composed text at the cursor and, when the reference goes into
 	 * a numbered footnote, append its definition at the end of the note.
 	 */
-	private insertComposed(content: string, location: string) {
+	/**
+	 * Make sure the atomic source notes exist and return the wikilink that the
+	 * inserted reference should point at, or undefined when the reference stays
+	 * plain text (linking off, or the vault could not be written).
+	 */
+	private async sourceLinkFor(location: string, sources: PreparedSource[]): Promise<string | undefined> {
+		if (!this.settings.linkSourceFiles || !sources.length) return undefined;
+		const root = this.settings.sourcesFolder.trim() || DEFAULT_SOURCES_FOLDER;
+		try {
+			if (this.settings.createMissingSources) {
+				await ensureSourceNotes(vaultWriter(this.app), sources, root);
+			}
+			return sourceLink(sources[0].source, location, root);
+		} catch (error) {
+			console.error("Shiur Notes Inserter: could not write the source note", error);
+			new Notice(t("sourceWriteError"));
+			return undefined;
+		}
+	}
+
+	private async insertComposed(content: string, location: string, sources: PreparedSource[] = []) {
+		const locationLink = await this.sourceLinkFor(location, sources);
 		const needsFootnoteId =
 			this.settings.footnoteReference && this.settings.footnoteStyle === "numbered";
 		const footnoteId = needsFootnoteId ? nextFootnoteId(this.editor.getValue()) : undefined;
 		const { text, footnoteDefinition } = composeInsert(content, location, this.settings, {
 			footnoteId,
+			locationLink,
 		});
 		this.editor.replaceSelection(text);
 		if (!footnoteDefinition) return;
@@ -798,7 +866,7 @@ export class PasukModal extends Modal {
 		children[this.selected]?.scrollIntoView({ block: "nearest" });
 	}
 
-	private insertSelected() {
+	private async insertSelected() {
 		const item = this.items[this.selected];
 		if (!item) return;
 		const opts = {
@@ -808,7 +876,7 @@ export class PasukModal extends Modal {
 		};
 		const lines = item.verses.map((v) => formatHebrew(v, opts));
 
-		const source = formatBookReferenceInHebrew(
+		const location = formatBookReferenceInHebrew(
 			item.book,
 			item.chapter,
 			item.verseStart,
@@ -816,7 +884,20 @@ export class PasukModal extends Modal {
 			item.wholeChapter ?? false
 		);
 
-		this.insertComposed(lines.join(" "), source);
+		// One note per verse; a range or a whole chapter writes every verse it
+		// covers and the inserted reference links to the first of them.
+		const prepared: PreparedSource[] = item.verses.map((verse, offset) => ({
+			source: {
+				kind: "tanakh",
+				bookKey: item.book.key,
+				bookHe: item.book.he,
+				chapter: item.chapter,
+				verse: item.verseStart + offset,
+			},
+			text: formatHebrew(verse, FULL_TEXT),
+		}));
+
+		await this.insertComposed(lines.join(" "), location, prepared);
 		this.close();
 	}
 }

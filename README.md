@@ -32,6 +32,57 @@ Insert bundled offline **Tanakh**, **Rambam (Mishneh Torah)**, and **Gemara** pa
 - Offline Rambam and Bavli text bundled with the plugin
 - Select only the part of a Rambam or Gemara passage you want to insert
 - Hebrew citations for inserted references
+- **Atomic source library**: one note per verse, per amud and per halacha, in Hebrew folders
+- Citations are **wikilinks** that open the source note
+
+## Source library (מקורות)
+
+Every primary source has its own note in the vault, named in Hebrew with Hebrew-letter numbering:
+
+| Source | Granularity | Path |
+| --- | --- | --- |
+| Tanakh (תנ״ך) | 1 verse per file | `מקורות/תנך/[ספר]/פרק [אות]/[אות].md` |
+| Gemara (גמרא) | 1 amud per file | `מקורות/גמרא/[מסכת]/פרק [אות]/[דף עמוד].md` |
+| Rambam (רמב״ם) | 1 halacha per file | `מקורות/רמבם/[נושא]/פרק [אות]/[אות].md` |
+
+Examples:
+
+```text
+מקורות/תנך/בראשית/פרק א/א.md
+מקורות/גמרא/ברכות/פרק א/ב עא.md        ← דף ב עמוד א
+מקורות/גמרא/ברכות/פרק א/ב עב.md        ← דף ב עמוד ב
+מקורות/רמבם/קריאת שמע/פרק א/א.md      ← no "הלכות" prefix in the folder
+```
+
+Each note holds the text plus YAML frontmatter (collection, book/tractate/section, perek, verse/daf/halacha, the Hebrew citation and the matching Sefaria reference) and links to the previous and next source, and to the first source of its perek:
+
+```md
+---
+סוג: "מקור"
+מקור: "תנ״ך"
+ספר: "בראשית"
+פרק: "א"
+פסוק: "א"
+הפניה: "בְּרֵאשִׁית א:א"
+sefaria: "Genesis.1.1"
+---
+
+# בראשית פרק א, פסוק א
+
+בְּרֵאשִׁ֖ית בָּרָ֣א אֱלֹהִ֑ים...
+
+---
+
+[[מקורות/תנך/בראשית/פרק א/א|פרק א]] · [[מקורות/תנך/בראשית/פרק א/ב|הבא — בְּרֵאשִׁית א:ב]]
+```
+
+**Filling the folder.** `mekorot-library.zip` — attached to every release, and built locally with `npm run build-library` — contains the whole library: 23,206 verses, 5,349 amudim and 15,210 halachot, about 43,700 notes. Extract it at the root of your vault and every citation resolves.
+
+The plugin also creates any source note that is still missing at the moment you insert from it, so a citation is never left dangling even in a vault without the archive. Notes that already exist are **never overwritten**, which means your own highlights in a source note are safe.
+
+**Gemara perek numbering** follows the order the perakim are printed in the masechet, which is not always the Mishnah's chapter order (Sanhedrin prints "חלק" last, Menachot prints "רבי ישמעאל" at 63b). The boundaries come from Sefaria's mishnah-to-daf map and are cross-checked against the bundled text — see [`STUDY_TEXTS.md`](STUDY_TEXTS.md).
+
+**Ranges.** A reference that covers several verses (`Gen 1:1-3`, `Gen 1`) writes every verse it covers and links to the first of them, with the range shown in the citation.
 
 ## Gemara shortcuts
 
@@ -94,6 +145,9 @@ Inserted Rambam citations use `רמב״ם:<section> <chapter>:<halacha>`:
 
 ## Settings
 
+- Sources folder
+- Link references to source files
+- Create missing source files
 - Include nikud
 - Include te'amim
 - Insert as quote block
@@ -120,7 +174,18 @@ Inserted Rambam citations use `רמב״ם:<section> <chapter>:<halacha>`:
 
 ```bash
 npm install
-npm run build
+npm run build           # typecheck + bundle main.js
+npm test                # insertion formatting, offline lookup, source library
+npm run build-library   # mekorot-library.zip: the whole מקורות library
 ```
+
+| Script | What it does |
+| --- | --- |
+| `npm run build-corpus` | Packs the Tanakh corpus into `src/data/corpus.ts` |
+| `npm run fetch-study-corpus` / `build-study-corpus` | Refreshes the bundled Rambam and Bavli text |
+| `npm run fetch-gemara-perakim` | Regenerates `src/gemara-perakim.ts` (where each perek starts) |
+| `npm run build-library` | Writes `mekorot-library.zip` |
+
+`src/mekorot.ts` holds the path and note builders, `src/library.ts` walks the whole corpus with them, and the plugin uses the same functions on demand — so the archive and the notes the plugin creates cannot drift apart.
 
 Repository: https://github.com/mgsmath/obsidian-torah-verse-inserter

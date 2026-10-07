@@ -10,6 +10,7 @@ import {
 import { PasukModal } from "./modal";
 import type { FootnoteStyle } from "./compose";
 import { initI18n, t } from "./i18n";
+import { DEFAULT_SOURCES_FOLDER } from "./mekorot";
 import {
 	DEFAULT_GEMARA_TRACTATE_ALIASES,
 	GEMARA_TRACTATES,
@@ -26,6 +27,12 @@ export interface PasukSettings {
 	footnoteStyle: FootnoteStyle;
 	maxResults: number;
 	fontCompat: boolean;
+	/** Vault folder that holds the atomic source notes. */
+	sourcesFolder: string;
+	/** Turn the inserted reference into a wikilink to its source note. */
+	linkSourceFiles: boolean;
+	/** Create a source note on insertion when the vault does not have it yet. */
+	createMissingSources: boolean;
 	alefBetOpen: boolean;
 	rambamSearchTerms: string;
 	gemaraSearchTerms: string;
@@ -45,6 +52,9 @@ const DEFAULT_SETTINGS: PasukSettings = {
 	footnoteStyle: "inline",
 	maxResults: 30,
 	fontCompat: true,
+	sourcesFolder: DEFAULT_SOURCES_FOLDER,
+	linkSourceFiles: true,
+	createMissingSources: true,
 	alefBetOpen: false,
 	rambamSearchTerms: "rmbm/rm",
 	gemaraSearchTerms: "gm",
@@ -217,6 +227,39 @@ class PasukSettingTab extends PluginSettingTab {
 						s.maxResults = n;
 						save();
 					}
+				})
+			);
+
+		new Setting(containerEl).setName(t("sourcesHeading")).setHeading();
+
+		new Setting(containerEl)
+			.setName(t("sourcesFolder"))
+			.setDesc(t("sourcesFolderDesc"))
+			.addText((txt) =>
+				txt.setValue(s.sourcesFolder).onChange((v) => {
+					// Empty means the default folder, not the vault root.
+					s.sourcesFolder = v.trim() || DEFAULT_SOURCES_FOLDER;
+					save();
+				})
+			);
+
+		new Setting(containerEl)
+			.setName(t("linkSourceFiles"))
+			.setDesc(t("linkSourceFilesDesc"))
+			.addToggle((tg) =>
+				tg.setValue(s.linkSourceFiles).onChange((v) => {
+					s.linkSourceFiles = v;
+					save();
+				})
+			);
+
+		new Setting(containerEl)
+			.setName(t("createMissingSources"))
+			.setDesc(t("createMissingSourcesDesc"))
+			.addToggle((tg) =>
+				tg.setValue(s.createMissingSources).onChange((v) => {
+					s.createMissingSources = v;
+					save();
 				})
 			);
 

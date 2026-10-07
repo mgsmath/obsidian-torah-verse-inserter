@@ -18,6 +18,17 @@ export interface InsertStyle {
 	footnoteStyle?: FootnoteStyle;
 }
 
+export interface ComposeOptions {
+	footnoteId?: string;
+	/**
+	 * Obsidian wikilink to the source note, e.g.
+	 * `[[מקורות/תנך/בראשית/פרק א/א|בראשית א:א]]`. When present it replaces the
+	 * plain-text reference everywhere the reference is printed, so the citation
+	 * opens the atomic source file instead of being dead text.
+	 */
+	locationLink?: string;
+}
+
 export interface ComposedInsert {
 	/** Text to insert at the cursor. */
 	text: string;
@@ -55,7 +66,7 @@ export function composeInsert(
 	content: string,
 	location: string,
 	style: InsertStyle,
-	options: { footnoteId?: string } = {}
+	options: ComposeOptions = {}
 ): ComposedInsert {
 	// One pair of quotation marks around the text, whatever the format.
 	const quoted = style.quoteMarks ? `"${content}"` : content;
@@ -63,8 +74,12 @@ export function composeInsert(
 	// its reference) in both English and Hebrew surrounding lines. A single
 	// isolate around both would flip them visually inside an RTL context.
 	const text = isolateIfRtl(quoted);
-	const parenthesizedRef = isolateIfRtl(`(${location})`);
-	const dashRef = isolateIfRtl(`— ${location}`);
+	// A wikilink is never wrapped in an isolate: the `[[` and `]]` have to stay
+	// visible to Obsidian's parser. Its own label is isolated by sourceLink(),
+	// so the Hebrew inside the link still reads right to left.
+	const reference = options.locationLink ?? isolateIfRtl(location);
+	const parenthesizedRef = options.locationLink ? `(${reference})` : isolateIfRtl(`(${location})`);
+	const dashRef = options.locationLink ? `— ${reference}` : isolateIfRtl(`— ${location}`);
 
 	// Reference in a footnote: the marker is attached to the text and no
 	// visible reference is printed next to it.
@@ -73,10 +88,8 @@ export function composeInsert(
 		const id = options.footnoteId ?? "1";
 		// The marker stays outside the isolate so it follows the text
 		// logically (to its left inside an RTL line, to its right in English).
-		const marker = numbered ? `[^${id}]` : `^[${isolateIfRtl(location)}]`;
-		const footnoteDefinition = numbered
-			? `[^${id}]: ${isolateIfRtl(location)}`
-			: undefined;
+		const marker = numbered ? `[^${id}]` : `^[${reference}]`;
+		const footnoteDefinition = numbered ? `[^${id}]: ${reference}` : undefined;
 		if (style.quoteFormat) {
 			const lines = quoted.split("\n").map((line) => isolateIfRtl(line));
 			lines[lines.length - 1] += marker;
@@ -117,7 +130,7 @@ export function composeInsertedText(
 	content: string,
 	location: string,
 	style: InsertStyle,
-	options: { footnoteId?: string } = {}
+	options: ComposeOptions = {}
 ): string {
 	return composeInsert(content, location, style, options).text;
 }
