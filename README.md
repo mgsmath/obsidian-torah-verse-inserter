@@ -98,6 +98,8 @@ Inserted Rambam citations use `רמב״ם:<section> <chapter>:<halacha>`:
 - Include te'amim
 - Insert as quote block
 - Quotation marks (wrap the text in "quotes" in every format)
+- Reference as footnote (the reference goes into a footnote attached to the text)
+- Footnote style (inline `^[Bereshit 1:1]`, or numbered `[^1]` with the definition at the end of the note)
 - Maximum search results
 - Rambam search terms
 - Gemara search terms

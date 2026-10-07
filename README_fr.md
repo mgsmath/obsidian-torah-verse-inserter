@@ -85,6 +85,8 @@ Cliquez sur le bouton **א** pour ouvrir un clavier hébreu dans la fenêtre de 
 | Inclure le nikoud (voyelles) | Insérer les versets avec les points-voyelles | On |
 | Inclure les te'amim (cantillation) | Insérer les versets avec les signes de cantillation | Off |
 | Insérer en bloc de citation | Encadrer les versets dans une citation avec la référence | On |
+| Référence en note de bas de page | La référence va dans une note rattachée au texte | Off |
+| Style de note | En ligne `^[Bereshit 1:1]`, ou numérotée `[^1]` avec la définition à la fin de la note | En ligne |
 | Nombre maximal de résultats | Limiter le nombre de versets en recherche textuelle | 30 |
 | Compatibilité des polices | Remplacer les signes rares (qamats qatan, holam haser) par des équivalents standard | On |
 

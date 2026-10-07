@@ -102,6 +102,53 @@ try {
 	// 8. flowIntoSingleLine still collapses segments.
 	assert.equal(compose.flowIntoSingleLine("a\n\nb\r\n  c "), "a b c");
 
+	// 9. Inline footnote: the reference moves into ^[...] right after the text
+	// and nothing has to be appended at the end of the note.
+	const inlineFootnote = compose.composeInsert(content, location, {
+		quoteFormat: false,
+		quoteMarks: true,
+		inlineReference: true,
+		footnoteReference: true,
+		footnoteStyle: "inline",
+	});
+	assert.equal(inlineFootnote.text, `${RLI}"${content}"${PDI}^[${RLI}${location}${PDI}]`);
+	assert.equal(inlineFootnote.footnoteDefinition, undefined);
+
+	// 10. Numbered footnote in a quote block: the marker closes the last
+	// quoted line and the definition is handed back for the end of the note.
+	const numbered = compose.composeInsert(content + "\n" + content, location, {
+		quoteFormat: true,
+		quoteMarks: false,
+		inlineReference: false,
+		footnoteReference: true,
+		footnoteStyle: "numbered",
+	}, { footnoteId: "3" });
+	assert.equal(
+		numbered.text,
+		`> ${RLI}${content}${PDI}\n> ${RLI}${content}${PDI}[^3]\n`
+	);
+	assert.equal(numbered.footnoteDefinition, `[^3]: ${RLI}${location}${PDI}`);
+
+	// 11. Footnote ids never collide with the ones already in the note.
+	assert.equal(compose.nextFootnoteId(""), "1");
+	assert.equal(compose.nextFootnoteId("a[^1] b[^4]\n\n[^1]: x\n[^4]: y\n"), "5");
+	assert.equal(compose.nextFootnoteId("a[^note] b"), "1");
+
+	// 12. Definitions are separated from prose by a blank line, then stacked
+	// one per line, reusing the newlines already at the end of the note.
+	assert.equal(compose.footnoteDefinitionAppendix("", "[^1]: x"), "[^1]: x\n");
+	assert.equal(compose.footnoteDefinitionAppendix("text", "[^1]: x"), "\n\n[^1]: x\n");
+	assert.equal(compose.footnoteDefinitionAppendix("text\n", "[^1]: x"), "\n[^1]: x\n");
+	assert.equal(compose.footnoteDefinitionAppendix("text\n\n", "[^1]: x"), "[^1]: x\n");
+	assert.equal(compose.footnoteDefinitionAppendix("text\n\n[^1]: x\n", "[^2]: y"), "[^2]: y\n");
+
+	// 13. Footnote layouts keep the visible text and reference intact.
+	for (const out of [inlineFootnote, numbered]) {
+		const all = stripIsolates(out.text + (out.footnoteDefinition ?? ""));
+		assert.ok(all.includes(content));
+		assert.ok(all.includes(location));
+	}
+
 	console.log("PASS Insertion formatting keeps quotes on the Hebrew side (RLI/PDI isolates).");
 } finally {
 	rmSync(temporaryDirectory, { recursive: true, force: true });

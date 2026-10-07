@@ -1,5 +1,14 @@
-import { App, Editor, Plugin, PluginSettingTab, Setting } from "obsidian";
+import {
+	App,
+	DropdownComponent,
+	Editor,
+	Plugin,
+	PluginSettingTab,
+	Setting,
+	ToggleComponent,
+} from "obsidian";
 import { PasukModal } from "./modal";
+import type { FootnoteStyle } from "./compose";
 import { initI18n, t } from "./i18n";
 import {
 	DEFAULT_GEMARA_TRACTATE_ALIASES,
@@ -13,6 +22,8 @@ export interface PasukSettings {
 	quoteFormat: boolean;
 	quoteMarks: boolean;
 	inlineReference: boolean;
+	footnoteReference: boolean;
+	footnoteStyle: FootnoteStyle;
 	maxResults: number;
 	fontCompat: boolean;
 	alefBetOpen: boolean;
@@ -30,6 +41,8 @@ const DEFAULT_SETTINGS: PasukSettings = {
 	quoteFormat: true,
 	quoteMarks: false,
 	inlineReference: false,
+	footnoteReference: false,
+	footnoteStyle: "inline",
 	maxResults: 30,
 	fontCompat: true,
 	alefBetOpen: false,
@@ -92,6 +105,15 @@ class PasukSettingTab extends PluginSettingTab {
 		const s = this.plugin.settings;
 		const save = () => void this.plugin.saveSettings();
 		let refreshDefaultRambamSectionOptions: (() => void) | null = null;
+		let inlineReferenceToggle: ToggleComponent | null = null;
+		let footnoteStyleDropdown: DropdownComponent | null = null;
+		// The footnote carries the reference, so the inline/own-line choice no
+		// longer applies while footnotes are on; the style only applies while
+		// they are.
+		const syncReferenceControls = () => {
+			inlineReferenceToggle?.setDisabled(s.footnoteReference);
+			footnoteStyleDropdown?.setDisabled(!s.footnoteReference);
+		};
 
 		new Setting(containerEl).setName(t("settings")).setHeading();
 
@@ -141,12 +163,39 @@ class PasukSettingTab extends PluginSettingTab {
 		new Setting(containerEl)
 			.setName(t("inlineReference"))
 			.setDesc(t("inlineReferenceDesc"))
-			.addToggle((tg) =>
+			.addToggle((tg) => {
+				inlineReferenceToggle = tg;
 				tg.setValue(s.inlineReference).onChange((v) => {
 					s.inlineReference = v;
 					save();
+				});
+			});
+
+		new Setting(containerEl)
+			.setName(t("footnoteReference"))
+			.setDesc(t("footnoteReferenceDesc"))
+			.addToggle((tg) =>
+				tg.setValue(s.footnoteReference).onChange((v) => {
+					s.footnoteReference = v;
+					syncReferenceControls();
+					save();
 				})
 			);
+
+		new Setting(containerEl)
+			.setName(t("footnoteStyle"))
+			.setDesc(t("footnoteStyleDesc"))
+			.addDropdown((dropdown) => {
+				footnoteStyleDropdown = dropdown;
+				dropdown.addOption("inline", t("footnoteStyleInline"));
+				dropdown.addOption("numbered", t("footnoteStyleNumbered"));
+				dropdown.setValue(s.footnoteStyle);
+				syncReferenceControls();
+				dropdown.onChange((value) => {
+					s.footnoteStyle = value === "numbered" ? "numbered" : "inline";
+					save();
+				});
+			});
 
 		new Setting(containerEl)
 			.setName(t("fontCompat"))

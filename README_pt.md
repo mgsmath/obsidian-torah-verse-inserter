@@ -85,6 +85,8 @@ Clique no botão **א** para abrir um teclado hebraico dentro da janela de pesqu
 | Incluir nikud (vogais) | Inserir os versículos com sinais vocálicos | On |
 | Incluir te'amim (cantilação) | Inserir os versículos com sinais de cantilação | Off |
 | Inserir como citação | Envolver os versículos em um blockquote com a referência | On |
+| Referência em nota de rodapé | A referência vai numa nota ligada ao texto | Off |
+| Estilo da nota de rodapé | Em linha `^[Bereshit 1:1]`, ou numerada `[^1]` com a definição no fim da nota | Em linha |
 | Máximo de resultados | Limitar quantos versículos aparecem na pesquisa por texto | 30 |
 | Compatibilidade de fontes | Substituir sinais raros (qamats qatan, holam haser) por equivalentes padrão | On |
 
